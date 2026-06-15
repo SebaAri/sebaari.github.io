@@ -262,6 +262,7 @@ body {
 } 
 
 .content-main .contact a { 
+    display: block;       
     color: #FFFFFF;
     width: 80%; 
     margin: 0 auto; 
