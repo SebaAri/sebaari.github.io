@@ -262,16 +262,15 @@ body {
 } 
 
 .content-main .contact a { 
-   /* display: block;       
-    color: #FFFFFF;
-    width: 80%; 
-    margin: 0 auto; 
     font-size: 1.2rem; 
     line-height: 1.6; 
-    text-align: center; */
- display: flex;                /* Convierte al contenedor en un flexbox */
-    gap: 20px;                    /* Espacio de separación entre ambas etiquetas */
-    align-items: center;          /* Alinea verticalmente al centro */
+    display: block;
+    color: #FFFFFF;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;               
+    gap: 50px;                   
+    text-align: center;          
     justify-content: flex-start;
     
 }
