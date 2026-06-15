@@ -261,7 +261,7 @@ body {
     margin: 0 auto; 
 } 
 
-.content-main .contact p { 
+.content-main .contact a { 
     color: #FFFFFF;
     width: 80%; 
     margin: 0 auto; 
