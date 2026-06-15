@@ -29,9 +29,7 @@ body {
     padding: 20px 0;
     display: flex;
     justify-content: center; 
-
-
-   mix-blend-mode: difference;
+    mix-blend-mode: difference;
     
 }
 
@@ -259,7 +257,11 @@ body {
     display: flex;
     flex-direction: column; 
     align-items: center;   
-    text-align: center; 
+    text-align: center;
+    font-size: 1.2rem; 
+    line-height: 1.6;
+    
+  
 } 
 
 .contact a { 
@@ -267,7 +269,10 @@ body {
     flex-direction: row;    
     justify-content: center;
     align-items: center;    
-    gap: 20px
+    gap: 20px;
+    color: #FFFFFF;
+    
+    
     
 }
 
