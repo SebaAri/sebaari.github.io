@@ -111,9 +111,7 @@ body {
     color: rgb(224, 224, 224); 
     font-size: 2.5rem; 
     font-weight: 100;
-    display: flex;
-    flex-direction: row;
-} 
+}
 
 .header_name h1 { 
     font-size: clamp(3vw,5vw,8vw); 
@@ -270,10 +268,10 @@ body {
     max-width: 1200px; 
     margin: 0 auto; 
     display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
     gap: 30px;
     justify-content: center;
-} 
+}
 
 .grid-projects .g-items { 
     height: 350px; 
@@ -415,8 +413,13 @@ body {
     .header {
         padding-top: 160px;
     }
+   .header_name h4 {
+        display: block; 
+        font-size: 1.8rem;
+    }
     .header_name h1 {
-        font-size: 2.5rem;
+        font-size: 2.3rem; 
+    
     }
     .header .header_description {
         width: 100%;
@@ -425,21 +428,35 @@ body {
     }
 }
 
+
+@media screen and (max-width: 480px) {
+    .grid-projects {
+        width: 90%;
+        gap: 20px;
+    }
+    .grid-projects .g-items .overlay {
+        font-size: 1.1rem; 
+        padding: 10px;
+        text-align: center;
+    }
+}
+
 @media screen and (max-width: 400px) {
+    .nav-inner {
+        width: 100%;
+        padding: 0 10px;
+    }
     .nav-list {
-        flex-direction: column !important; 
-        gap: 12px;             
-        text-align: center;     
+        flex-direction: row !important;
+        flex-wrap: wrap;               
+        justify-content: center;
+        gap: 15px !important;          
     }
     .nav-list li a {
-        font-size: 1.1rem;     
+        font-size: 0.95rem;    
     }
-    .header_name h1 {
-        font-size: 2rem;
-    }
-    .content-main .information p {
-        line-height: 28px;
-        letter-spacing: 2px;
+    .header {
+        padding-top: 140px;          
     }
 }
 
