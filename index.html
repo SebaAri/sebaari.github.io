@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/x-icon" href="assets/Icono.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicon/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.14.0/devicon.min.css">
   </head>
   <body>
     <header class="header" id="Header">
@@ -74,14 +74,18 @@
         <div class="container">
           <h2 class="text-center mb-5">Habilidades</h2>
           
+          <!-- El contenedor Row agrupa las columnas correctamente -->
           <div class="row row-cols-1 row-cols-md-2 g-4">
             
+            <!-- TARJETA 1: DATA SCIENCE & BASES DE DATOS -->
             <div class="col">
               <div class="card h-100 shadow-sm border-0">
-                <div class="tech-icons mb-3 d-flex justify-content-center gap-4">
-                       <img src="https://cdn.jsdelivr.net/gh/devicon/devicon@latest/icons/python/python-original.svg" alt="Python" style="width: 50px; height: 50px;">
-                       <img src="https://cdn.jsdelivr.net/gh/devicon/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" style="width: 50px; height: 50px;">
-               </div>
+                <div class="card-body text-center p-4">
+                  <!-- Contenedor de íconos -->
+                  <div class="tech-icons mb-3 d-flex justify-content-center gap-3">
+                    <i class="devicon-python-plain colored" style="font-size: 3rem;"></i>
+                    <i class="devicon-postgresql-plain colored" style="font-size: 3rem;"></i>
+                  </div>
                   <h5 class="card-title fw-bold">Data Science & Bases de Datos</h5>
                   <p class="card-text text-muted">
                     Especializado en el análisis de datos mediante el uso de Python y la gestión, diseño y optimización de consultas en bases de datos relacionales con SQL (PostgreSQL).
@@ -90,14 +94,16 @@
               </div>
             </div>
 
+            <!-- TARJETA 2: DESARROLLO FRONTEND -->
             <div class="col">
               <div class="card h-100 shadow-sm border-0">
                 <div class="card-body text-center p-4">
-                 <div class="tech-icons mb-3 d-flex justify-content-center gap-4">
-                     <img src="https://cdn.jsdelivr.net/gh/devicon/devicon@latest/icons/html5/html5-original.svg" alt="HTML5" style="width: 50px; height: 50px;">
-                     <img src="https://cdn.jsdelivr.net/gh/devicon/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" style="width: 50px; height: 50px;">
-                     <img src="https://cdn.jsdelivr.net/gh/devicon/devicon@latest/icons/sass/sass-original.svg" alt="Sass" style="width: 50px; height: 50px;">
-                 </div>
+                  <!-- Contenedor de íconos -->
+                  <div class="tech-icons mb-3 d-flex justify-content-center gap-3">
+                    <i class="devicon-html5-plain colored" style="font-size: 3rem;"></i>
+                    <i class="devicon-bootstrap-plain colored" style="font-size: 3rem;"></i>
+                    <i class="devicon-sass-original colored" style="font-size: 3rem;"></i>
+                  </div>
                   <h5 class="card-title fw-bold">Desarrollo Frontend</h5>
                   <p class="card-text text-muted">
                     Maquetación y diseño de interfaces web modernas y adaptables (responsive). Uso de HTML5 estructurado, estilización avanzada con Sass y frameworks robustos como Bootstrap.
@@ -106,9 +112,9 @@
               </div>
             </div>
 
-          </div>
-        </div>
-      </section>
+          </div> <!-- Cierre de .row -->
+        </div> <!-- Cierre de .container -->
+      </section> <!-- Cierre único y correcto de la sección habilidades -->
 
       <section id="projects" class="proyectos">
         <h2>Proyectos</h2>
