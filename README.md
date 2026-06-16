@@ -1,6 +1,6 @@
 👨‍💻 Portfolio Personal — Ariel R. Sebastian
 
-Bienvenido a mi portfolio de desarrollo y tecnología.
+Bienvenido a mi portafolio de desarrollo y tecnología.
 Este proyecto reúne información sobre mí, mis habilidades, proyectos y formas de contacto.
 
 🚀 Sobre mí
