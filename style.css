@@ -573,7 +573,6 @@ body {
     color: #ffffff !important;
 }
 
-/* Opcional: Si tienes subtítulos o texto secundario (muted), les damos un tono gris claro para mantener jerarquía */
 .habilidades .card .text-muted,
 .habilidades .card small,
 .habilidades .card .card-subtitle {
