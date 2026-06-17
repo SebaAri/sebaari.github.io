@@ -317,15 +317,18 @@ body {
 
 /* --- IMÁGENES DE FONDO PARA CADA PROYECTO --- */
 .grid-projects .project-1 {
-    background-image: url("assets/Clon-Google.jpeg"); 
+    background-image: url("assets/Clon-Google.jpeg");
+     
 }
 
 .grid-projects .project-2 {
-    background-image: url("assets/Sitio-Web.jpeg"); 
+    background-image: url("assets/Sitio-Web.jpeg");
+   
 }
 
 .grid-projects .project-3 {
     background-image: url("assets/proyecto3.jpg");
+    
 }
 
 .grid-projects .g-items .overlay { 
@@ -339,8 +342,14 @@ body {
     font-size: 1.5rem; 
     display: grid; 
     place-items: center; 
-    transition: height 0.3s ease; 
+    transition: height 0.3s ease;
+    
 } 
+
+.grid-projects .g-items:hover {
+     transform: translateY(-10px) !important; 
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15) !important;
+}
 
 .grid-projects .g-items:hover .overlay { 
     height: 100%; 
