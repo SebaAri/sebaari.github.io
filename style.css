@@ -149,10 +149,10 @@ body {
     color: white; 
     font-size: 2rem; 
     /* transition: transform 0.3s; */
-    transition-property: color, transform; /* Corregido para que aplique también a transform */
+    transition-property: color, transform; 
     transition-duration: 0.5s;
-    transition-timing-function: cubic-bezier(.06, 1.15, .83, 0.8); /* Corregida errata de sintaxis (.0.8) */
-    transition-delay: 0s; /* Ajustado delay para respuesta inmediata al pasar el mouse */
+    transition-timing-function: cubic-bezier(.06, 1.15, .83, 0.8); 
+    transition-delay: 0s; 
 } 
 
 .headers_networks a:first-of-type i:hover { 
@@ -345,10 +345,18 @@ body {
     transition: height 0.3s ease;
     
 } 
+/* --- OPTIMIZACIÓN DE VISIBILIDAD PARA PROYECTOS EN PANTALLAS PEQUEÑAS --- */
+/* 1. Transición base para suavizar la animación en móviles */
+.grid-projects .g-items {
+    transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.35s ease, border-color 0.35s ease !important;
+    border: 1px solid transparent; 
+}
 
-.grid-projects .g-items:hover {
-     transform: translateY(-10px) !important; 
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15) !important;
+.grid-projects .g-items:hover,
+.grid-projects .g-items:active {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 10px 20px rgba(0, 229, 255, 0.15), 0 6px 6px rgba(0, 229, 255, 0.1) !important;
+    border-color: rgba(0, 229, 255, 0.3) !important;
 }
 
 .grid-projects .g-items:hover .overlay { 
@@ -570,4 +578,11 @@ body {
 .habilidades .card small,
 .habilidades .card .card-subtitle {
     color: #b0bec5 !important;
+}
+
+/* --- EXTENSIÓN PARA EL OVERLAY EN DISPOSITIVOS MÓVILES --- */
+.grid-projects .g-items:hover .overlay,
+.grid-projects .g-items:active .overlay { 
+    height: 100%; 
+    background-color: rgba(0, 63, 71, 0.85); 
 }
