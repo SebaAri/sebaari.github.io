@@ -138,6 +138,9 @@ body {
     background-color: rgba(0, 63, 71, 0.8); 
     padding: 0 10px; 
     border-radius: 10px; 
+    display: inline-block !important;
+    margin-right: -0.08em !important;
+    vertical-align: middle !important;
 } 
 
 .headers_networks { 
