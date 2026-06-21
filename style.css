@@ -289,13 +289,134 @@ body {
     background-color: inherit; 
 }
 
-/* CONTACTO */
-.contacto .contact a { 
-    display: flex;         
-    flex-direction: row;    
+
+/* --- SECCIÓN HABILIDADES ---*/
+/* --- ALINEACIÓN SECCIÓN HABILIDADES --- */
+.habilidades {
+    width: 100%;
+}
+
+/* Contenedor interno para envolver las tarjetas */
+.habilidades .container-cards {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px;
     justify-content: center;
-    align-items: center;    
+}
+
+.tech-icons i {
+    font-size: 3.5rem !important;
+    display: inline-block !important;
+    width: auto !important;
+    height: auto !important;
+    line-height: 1 !important;
+}
+
+.tech-icons i::before {
+    display: inline-block !important;
+    font-family: "devicon" !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+}
+
+.tech-icons p {
+    color: #FFFFFF;
+}
+
+/*.habilidades .card {
+    background-color: #ffffff !important; 
+    color: #333333 !important;           
+}*/
+
+.habilidades .card-title {
+    color: rgb(0, 25, 28) !important;     
+}
+
+/* --- EFECTO FLOTANTE PARA LAS TARJETAS --- */
+.habilidades .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    background-color: rgba(255, 255, 255, 0.05) !important; 
+    border: 1px solid rgba(0, 63, 71, 0.5) !important;       
+    backdrop-filter: blur(4px) !important;
+
+}
+
+.habilidades .card:hover {
+    transform: translateY(-10px) !important; 
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15) !important; 
+}
+
+/* --- AGREGADO: VISIBILIDAD DE TEXTOS Y TÍTULOS EN TARJETAS --- */
+
+/* Forza a que todos los elementos de texto dentro de la tarjeta de habilidades sean blancos */
+.habilidades .card,
+.habilidades .card-title,
+.habilidades .card-body,
+.habilidades .card-text,
+.habilidades .card p,
+.habilidades .card span,
+.habilidades .card h1,
+.habilidades .card h2,
+.habilidades .card h3,
+.habilidades .card h4,
+.habilidades .card h5,
+.habilidades .card h6 {
+    color: #ffffff !important;
+}
+
+.habilidades .card .text-muted,
+.habilidades .card small,
+.habilidades .card .card-subtitle {
+    color: #b0bec5 !important;
+}
+
+/* --- EXTENSIÓN PARA EL OVERLAY EN DISPOSITIVOS MÓVILES --- */
+.grid-projects .g-items:hover .overlay,
+.grid-projects .g-items:active .overlay { 
+    height: 100%; 
+    background-color: rgba(0, 63, 71, 0.85); 
+}
+
+/* --- AJUSTE DE ALINEACIÓN VERTICAL PARA LA PRIMERA LETRA --- */
+
+.header_name h1::first-letter {
+    vertical-align: baseline !important;
+
+    line-height: 1 !important;
+
+    transform: translateY(0.05em) !important;
+}
+
+/* CONTACTO */
+/* --- ALINEACIÓN SECCIÓN CONTACTO --- */
+.contacto {
+    width: 100%;
+}
+
+.contacto .contact {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 20px;
+}
+
+/* Asegurar que los enlaces mantengan un layout limpio */
+.contacto .contact a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    text-decoration: none;
+    transition: color 0.3s ease;        
+    flex-direction: row;    
+    align-items: center;   
     font-size: 1.2rem; 
     line-height: 1.6;
     color: #FFFFFF;
@@ -413,8 +534,14 @@ body {
     }
     .header_name h1 { 
         font-size: 3.2rem; 
-    } 
+    }
+    .habilidades .container-cards, 
+    .contacto .contact { 
+        width: 90%; 
+    }
 }
+
+
 
 @media screen and (max-width: 992px) { 
     .header { 
@@ -495,6 +622,10 @@ body {
         padding: 10px;
         text-align: center;
     }
+    .habilidades .container-cards {
+        width: 90%;
+        gap: 20px;
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -523,86 +654,3 @@ body {
     .information p { color: white; } 
 }
 
-/* --- SECCIÓN HABILIDADES ---*/
-.tech-icons i {
-    font-size: 3.5rem !important;
-    display: inline-block !important;
-    width: auto !important;
-    height: auto !important;
-    line-height: 1 !important;
-}
-
-.tech-icons i::before {
-    display: inline-block !important;
-    font-family: "devicon" !important;
-    font-style: normal !important;
-    font-weight: normal !important;
-}
-
-.tech-icons p {
-    color: #FFFFFF;
-}
-
-/*.habilidades .card {
-    background-color: #ffffff !important; 
-    color: #333333 !important;           
-}*/
-
-.habilidades .card-title {
-    color: rgb(0, 25, 28) !important;     
-}
-
-/* --- EFECTO FLOTANTE PARA LAS TARJETAS --- */
-.habilidades .card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-    background-color: rgba(255, 255, 255, 0.05) !important; 
-    border: 1px solid rgba(0, 63, 71, 0.5) !important;       
-    backdrop-filter: blur(4px) !important;
-
-}
-
-.habilidades .card:hover {
-    transform: translateY(-10px) !important; 
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15) !important; 
-}
-
-/* --- AGREGADO: VISIBILIDAD DE TEXTOS Y TÍTULOS EN TARJETAS --- */
-
-/* Forza a que todos los elementos de texto dentro de la tarjeta de habilidades sean blancos */
-.habilidades .card,
-.habilidades .card-title,
-.habilidades .card-body,
-.habilidades .card-text,
-.habilidades .card p,
-.habilidades .card span,
-.habilidades .card h1,
-.habilidades .card h2,
-.habilidades .card h3,
-.habilidades .card h4,
-.habilidades .card h5,
-.habilidades .card h6 {
-    color: #ffffff !important;
-}
-
-.habilidades .card .text-muted,
-.habilidades .card small,
-.habilidades .card .card-subtitle {
-    color: #b0bec5 !important;
-}
-
-/* --- EXTENSIÓN PARA EL OVERLAY EN DISPOSITIVOS MÓVILES --- */
-.grid-projects .g-items:hover .overlay,
-.grid-projects .g-items:active .overlay { 
-    height: 100%; 
-    background-color: rgba(0, 63, 71, 0.85); 
-}
-
-/* --- AJUSTE DE ALINEACIÓN VERTICAL PARA LA PRIMERA LETRA --- */
-
-.header_name h1::first-letter {
-    vertical-align: baseline !important;
-
-    line-height: 1 !important;
-
-    transform: translateY(0.05em) !important;
-}
