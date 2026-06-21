@@ -273,17 +273,20 @@ body {
      border-radius: 15px; 
 } 
 
-.content-main section h2 { 
-    text-align: center; 
-    font-size: 2.5rem; 
-    font-family: 'Righteous', cursive; 
+.content-main section h2 {  
+    text-align: center;  
+    font-size: 2.5rem;  
+    font-family: 'Righteous', cursive;  
     margin-bottom: 40px;
     
-    /* Modo fijo (Sticky) */
-   /* position: sticky;
-     top: 0;   */      
-    z-index: 10;       
-    padding: 15px 0;   
+    /* --- CORRECCIÓN DE STICKY SEGURO --- */
+    position: sticky;
+    top: 60px;          /* Ajusta este valor si tu menú de navegación cambia de altura */
+    z-index: 100;       /* Mayor que el contenido, menor que el nav (2000) */
+    padding: 15px 0;    
+    
+    /* Asegura un fondo sólido del color de su respectiva sección para ocultar lo que pasa por detrás */
+    background-color: inherit; 
 }
 
 /* CONTACTO */
@@ -449,6 +452,9 @@ body {
     .information .information_image, .information p { 
         width: 100%; 
     } 
+    .content-main section h2 {  
+        top: 70px;
+    }
 } 
 
 @media screen and (max-width: 650px) {
