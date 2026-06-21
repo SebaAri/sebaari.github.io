@@ -210,11 +210,11 @@ body {
 .content-main section { 
     width: 100%; 
     min-height: 100vh; 
-    padding: 100px 20px 80px 20px; 
+    padding: 80px 20px 80px 20px;
     display: flex; 
     flex-direction: column; 
     justify-content: center; 
-} 
+}
 
 /* Secciones IMPARES (Sobre mí, Proyectos...) */
 .content-main section:nth-of-type(odd) { 
@@ -247,28 +247,30 @@ body {
 /* Sobre Mí Base */ 
 .information { 
     width: 85%; 
-    max-width: 1000px; 
+    max-width: 1200px; /* Cambiado de 1000px a 1200px */
     margin: 0 auto; 
     display: flex; 
     align-items: center; 
-    justify-content: space-around; 
-    gap: 40px; 
-} 
+    justify-content: space-between !important; 
+    gap: 50px; /* Un poco más de espacio intermedio debido al nuevo ancho */
+}
 
 .information .information_image { 
     width: 45%; 
-} 
-
-.information .information_image img { 
-     width: 100%; 
-     height: auto; 
-     border-radius: 15px; 
+    display: flex;
+    justify-content: flex-start; /* Fuerza a la imagen a pegarse por completo a la izquierda */
 } 
 
 .information p { 
     width: 50%; 
     font-size: 1.2rem; 
     line-height: 1.6; 
+    text-align: justify; /* Opcional: hace que el bloque de texto sea cuadrado y se alinee mejor a la derecha */
+}
+.information .information_image img {
+     width: 100%; 
+     height: auto; 
+     border-radius: 15px; 
 } 
 
 .content-main section h2 { 
@@ -278,8 +280,8 @@ body {
     margin-bottom: 40px;
     
     /* Modo fijo (Sticky) */
-    position: sticky;
-    top: 80px;         
+   /* position: sticky;
+     top: 0;   */      
     z-index: 10;       
     padding: 15px 0;   
 }
