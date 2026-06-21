@@ -210,7 +210,7 @@ body {
 .content-main section {  
     width: 100%; 
     min-height: 100vh; 
-    padding: 80px 0; /* Dejamos 0 a los lados para que .information mande sobre los límites */
+    padding: 80px 0; 
     display: flex; 
     flex-direction: column; 
     justify-content: center; 
@@ -253,20 +253,20 @@ body {
     align-items: center; 
     justify-content: space-between; 
     gap: 50px;
-    padding: 0; /* Limpiamos paddings para evitar desfases con el nav */
+    padding: 0; 
 }
 
 .information .information_image {  
     width: 45%; 
     display: flex;
-    justify-content: flex-start; /* Empuja la imagen al borde izquierdo exacto */
+    justify-content: flex-start; 
 } 
 
 .information p {  
     width: 50%; 
     font-size: 1.2rem; 
     line-height: 1.6; 
-    text-align: justify; /* Hace que el bloque sea cuadrado y se alinee perfecto a la derecha */
+    text-align: justify; 
 }
 
 .information .information_image img {
@@ -283,11 +283,9 @@ body {
     
     /* --- CORRECCIÓN DE STICKY SEGURO --- */
     position: sticky;
-    top: 60px;          /* Ajusta este valor si tu menú de navegación cambia de altura */
-    z-index: 100;       /* Mayor que el contenido, menor que el nav (2000) */
-    padding: 15px 0;    
-    
-    /* Asegura un fondo sólido del color de su respectiva sección para ocultar lo que pasa por detrás */
+    top: 60px;         
+    z-index: 100;      
+    padding: 15px 0;   
     background-color: inherit; 
 }
 
