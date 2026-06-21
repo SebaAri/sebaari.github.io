@@ -18,6 +18,12 @@ body {
     background-color: #f4f4f4; 
 } 
 
+/* Evitar desbordes globales de forma segura */
+html, body {
+    overflow-x: hidden !important;
+    max-width: 100%;
+}
+
 /* --- NAVEGACIÓN --- */ 
 .container_nav {
     width: 100%;             
@@ -106,8 +112,8 @@ body {
 } 
 
 .header-hero-container { 
-    width: 85%;             
-    max-width: 1200px;      
+    width: 85%;            
+    max-width: 1200px;     
     display: flex; 
     flex-direction: row; 
     justify-content: space-between; 
@@ -140,7 +146,9 @@ body {
     border-radius: 10px; 
     display: inline-block !important;
     margin-right: -0.08em !important;
-    vertical-align: middle !important;
+    vertical-align: baseline !important;
+    line-height: 1 !important;
+    transform: translateY(0.05em) !important;
 } 
 
 .headers_networks { 
@@ -151,7 +159,6 @@ body {
 .headers_networks a i { 
     color: white; 
     font-size: 2rem; 
-    /* transition: transform 0.3s; */
     transition-property: color, transform; 
     transition-duration: 0.5s;
     transition-timing-function: cubic-bezier(.06, 1.15, .83, 0.8); 
@@ -289,22 +296,24 @@ body {
     background-color: inherit; 
 }
 
-
-/* --- SECCIÓN HABILIDADES ---*/
-/* --- ALINEACIÓN SECCIÓN HABILIDADES --- */
+/* --- SECCIÓN HABILIDADES (CORREGIDA Y ALINEADA) --- */
 .habilidades {
     width: 100%;
 }
 
-/* Contenedor interno para envolver las tarjetas */
+/* Unifica el contenedor con la rejilla global de la web */
 .habilidades .container-cards {
     width: 85%;
     max-width: 1200px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-    gap: 30px;
-    justify-content: center;
+    padding: 0;
+}
+
+/* Anula los márgenes negativos de Bootstrap que provocaban el desborde lateral */
+.habilidades .container-cards .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100%;
 }
 
 .tech-icons i {
@@ -326,22 +335,18 @@ body {
     color: #FFFFFF;
 }
 
-/*.habilidades .card {
-    background-color: #ffffff !important; 
-    color: #333333 !important;           
-}*/
-
 .habilidades .card-title {
     color: rgb(0, 25, 28) !important;     
 }
 
-/* --- EFECTO FLOTANTE PARA LAS TARJETAS --- */
+/* Efecto flotante en tarjetas */
 .habilidades .card {
     transition: transform 0.3s ease, box-shadow 0.3s ease !important;
     background-color: rgba(255, 255, 255, 0.05) !important; 
     border: 1px solid rgba(0, 63, 71, 0.5) !important;       
     backdrop-filter: blur(4px) !important;
-
+    max-width: 100% !important;
+    width: 100%;
 }
 
 .habilidades .card:hover {
@@ -349,11 +354,8 @@ body {
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15) !important; 
 }
 
-/* --- AGREGADO: VISIBILIDAD DE TEXTOS Y TÍTULOS EN TARJETAS --- */
-
-/* Forza a que todos los elementos de texto dentro de la tarjeta de habilidades sean blancos */
+/* Visibilidad de textos dentro de las tarjetas */
 .habilidades .card,
-.habilidades .card-title,
 .habilidades .card-body,
 .habilidades .card-text,
 .habilidades .card p,
@@ -373,56 +375,7 @@ body {
     color: #b0bec5 !important;
 }
 
-/* --- EXTENSIÓN PARA EL OVERLAY EN DISPOSITIVOS MÓVILES --- */
-.grid-projects .g-items:hover .overlay,
-.grid-projects .g-items:active .overlay { 
-    height: 100%; 
-    background-color: rgba(0, 63, 71, 0.85); 
-}
-
-/* --- AJUSTE DE ALINEACIÓN VERTICAL PARA LA PRIMERA LETRA --- */
-
-.header_name h1::first-letter {
-    vertical-align: baseline !important;
-
-    line-height: 1 !important;
-
-    transform: translateY(0.05em) !important;
-}
-
-/* CONTACTO */
-/* --- ALINEACIÓN SECCIÓN CONTACTO --- */
-.contacto {
-    width: 100%;
-}
-
-.contacto .contact {
-    width: 85%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
-
-/* Asegurar que los enlaces mantengan un layout limpio */
-.contacto .contact a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    text-decoration: none;
-    transition: color 0.3s ease;        
-    flex-direction: row;    
-    align-items: center;   
-    font-size: 1.2rem; 
-    line-height: 1.6;
-    color: #FFFFFF;
-}
-
-/* Proyectos (Grid) */ 
+/* --- SECCIÓN PROYECTOS --- */ 
 .grid-projects { 
     width: 85%; 
     max-width: 1200px; 
@@ -444,21 +397,9 @@ body {
     background-color: #555; 
 } 
 
-/* --- IMÁGENES DE FONDO PARA CADA PROYECTO --- */
-.grid-projects .project-1 {
-    background-image: url("assets/Clon-Google.jpeg");
-     
-}
-
-.grid-projects .project-2 {
-    background-image: url("assets/Sitio-Web.jpeg");
-   
-}
-
-.grid-projects .project-3 {
-    background-image: url("assets/proyecto3.jpg");
-    
-}
+.grid-projects .project-1 { background-image: url("assets/Clon-Google.jpeg"); }
+.grid-projects .project-2 { background-image: url("assets/Sitio-Web.jpeg"); }
+.grid-projects .project-3 { background-image: url("assets/proyecto3.jpg"); }
 
 .grid-projects .g-items .overlay { 
     position: absolute; 
@@ -472,10 +413,8 @@ body {
     display: grid; 
     place-items: center; 
     transition: height 0.3s ease;
-    
 } 
-/* --- OPTIMIZACIÓN DE VISIBILIDAD PARA PROYECTOS EN PANTALLAS PEQUEÑAS --- */
-/* 1. Transición base para suavizar la animación en móviles */
+
 .grid-projects .g-items {
     transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.35s ease, border-color 0.35s ease !important;
     border: 1px solid transparent; 
@@ -488,10 +427,40 @@ body {
     border-color: rgba(0, 229, 255, 0.3) !important;
 }
 
-.grid-projects .g-items:hover .overlay { 
+.grid-projects .g-items:hover .overlay,
+.grid-projects .g-items:active .overlay { 
     height: 100%; 
     background-color: rgba(0, 63, 71, 0.85); 
 } 
+
+/* --- SECCIÓN CONTACTO (CORREGIDA Y ALINEADA) --- */
+.contacto {
+    width: 100%;
+}
+
+.contacto .contact {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contacto .contact a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    text-decoration: none;
+    transition: color 0.3s ease;        
+    flex-direction: row;    
+    font-size: 1.2rem; 
+    line-height: 1.6;
+    color: #FFFFFF;
+}
 
 /* --- BOTÓN IR ARRIBA --- */ 
 .link_up { 
@@ -540,8 +509,6 @@ body {
         width: 90%; 
     }
 }
-
-
 
 @media screen and (max-width: 992px) { 
     .header { 
@@ -598,7 +565,7 @@ body {
     .header {
         padding-top: 160px;
     }
-   .header_name h4 {
+    .header_name h4 {
         display: block; 
         font-size: 1.8rem;
     }
@@ -624,7 +591,9 @@ body {
     }
     .habilidades .container-cards {
         width: 90%;
-        gap: 20px;
+    }
+    .habilidades .container-cards .row {
+        gap: 16px;
     }
 }
 
@@ -635,15 +604,15 @@ body {
     }
     .nav-list {
         flex-direction: row !important;
-        flex-wrap: wrap;              
+        flex-wrap: wrap;             
         justify-content: center;
-        gap: 15px !important;         
+        gap: 15px !important;        
     }
     .nav-list li a {
-        font-size: 0.95rem;    
+        font-size: 0.95rem;   
     }
     .header {
-        padding-top: 140px;         
+        padding-top: 140px;        
     }
 }
 
@@ -653,55 +622,3 @@ body {
     .content-main section h2 { color: white; background-color: rgb(0, 25, 28); } 
     .information p { color: white; } 
 }
-
-/* ========================================================
-   REGLAS DE PREVENCIÓN DE DESBORDE Y ALINEACIÓN PERFECTA
-   ======================================================== */
-
-html, body {
-    overflow-x: hidden;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.habilidades .container-cards {
-    width: 85%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-}
-
-.habilidades .card {
-    max-width: 100% !important;
-    width: 100%;
-}
-
-.contacto .contact {
-    width: 85%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-/* Sincronización con Media Queries existentes (Pantallas Medianas) */
-@media screen and (max-width: 1200px) { 
-    .habilidades .container-cards, 
-    .contacto .contact { 
-        width: 90%; 
-    } 
-}
-
-/* Ajuste fino para móviles */
-@media screen and (max-width: 480px) {
-    .habilidades .container-cards {
-        width: 90%;
-    }
-    .habilidades .row {
-        gap: 16px; /* Espaciado controlado en smartphones */
-    }
-}
-
