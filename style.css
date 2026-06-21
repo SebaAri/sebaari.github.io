@@ -207,10 +207,10 @@ body {
     width: 100%; 
 } 
 
-.content-main section { 
+.content-main section {  
     width: 100%; 
     min-height: 100vh; 
-    padding: 80px 20px 80px 20px;
+    padding: 80px 0; /* Dejamos 0 a los lados para que .information mande sobre los límites */
     display: flex; 
     flex-direction: column; 
     justify-content: center; 
@@ -245,33 +245,35 @@ body {
 } 
 
 /* Sobre Mí Base */ 
-.information { 
+.information {  
     width: 85%; 
-    max-width: 1200px; /* Cambiado de 1000px a 1200px */
+    max-width: 1200px; 
     margin: 0 auto; 
     display: flex; 
     align-items: center; 
-    justify-content: space-between !important; 
-    gap: 50px; /* Un poco más de espacio intermedio debido al nuevo ancho */
+    justify-content: space-between; 
+    gap: 50px;
+    padding: 0; /* Limpiamos paddings para evitar desfases con el nav */
 }
 
-.information .information_image { 
+.information .information_image {  
     width: 45%; 
     display: flex;
-    justify-content: flex-start; /* Fuerza a la imagen a pegarse por completo a la izquierda */
+    justify-content: flex-start; /* Empuja la imagen al borde izquierdo exacto */
 } 
 
-.information p { 
+.information p {  
     width: 50%; 
     font-size: 1.2rem; 
     line-height: 1.6; 
-    text-align: justify; /* Opcional: hace que el bloque de texto sea cuadrado y se alinee mejor a la derecha */
+    text-align: justify; /* Hace que el bloque sea cuadrado y se alinee perfecto a la derecha */
 }
+
 .information .information_image img {
      width: 100%; 
      height: auto; 
      border-radius: 15px; 
-} 
+}
 
 .content-main section h2 {  
     text-align: center;  
