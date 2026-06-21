@@ -654,3 +654,54 @@ body {
     .information p { color: white; } 
 }
 
+/* ========================================================
+   REGLAS DE PREVENCIÓN DE DESBORDE Y ALINEACIÓN PERFECTA
+   ======================================================== */
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.habilidades .container-cards {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.habilidades .card {
+    max-width: 100% !important;
+    width: 100%;
+}
+
+.contacto .contact {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Sincronización con Media Queries existentes (Pantallas Medianas) */
+@media screen and (max-width: 1200px) { 
+    .habilidades .container-cards, 
+    .contacto .contact { 
+        width: 90%; 
+    } 
+}
+
+/* Ajuste fino para móviles */
+@media screen and (max-width: 480px) {
+    .habilidades .container-cards {
+        width: 90%;
+    }
+    .habilidades .row {
+        gap: 16px; /* Espaciado controlado en smartphones */
+    }
+}
+
