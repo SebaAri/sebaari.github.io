@@ -628,64 +628,62 @@ body {
 
 
 /* ==========================================================================
-   EXPANSIÓN MÁXIMA DE TARJETAS (Para que dejen de verse chicas)
+   CONFIGURACIÓN INICIAL: NAV GIGANTE (1200px) + TARJETAS NORMALES
    ========================================================================== */
 
-/* 1. Sincronizamos el menú para que use la misma estructura limpia */
+/* Tu barra de navegación no se mueve, se queda abierta en 1200px siempre */
 .nav-inner {
     width: 85% !important;
     max-width: 1200px !important; 
     margin: 0 auto !important;
 }
 
-/* 2. Forzamos a la fila de Habilidades a estirarse al 100% sin restricciones */
+/* Estado inicial de las tarjetas: se abren al mismo ancho del nav */
 #abilities .row-cols-1.row-cols-md-2,
 .habilidades .row-cols-1.row-cols-md-2 {
     display: flex !important;
-    width: 100% !important;          /* Ocupa todo el ancho de su sección madre */
-    max-width: 1200px !important;    /* El mismo límite que tu menú */
-    margin-left: auto !important;
-    margin-right: auto !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
     
-    /* Eliminamos márgenes negativos que metan o saquen las tarjetas de la línea */
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    width: 85% !important;
+    max-width: 1200px !important; /* Arrancan del mismo ancho que el nav */
+    margin: 0 auto !important;
+    padding: 0 !important;
+    
+    /* Esta línea es clave para que el cambio de tamaño sea una animación suave */
+    transition: max-width 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) !important; 
 }
 
-/* 3. Hacemos que cada tarjeta ocupe el máximo espacio posible en escritorio */
+/* Tamaño de las columnas en el estado inicial */
 @media screen and (min-width: 768px) {
     #abilities .row-cols-1.row-cols-md-2 > .col,
     .habilidades .row-cols-1.row-cols-md-2 > .col {
-        /* Al usar 50%, las tarjetas se expandirán al máximo posible en tu pantalla,
-           dividiendo el contenedor exactamente a la mitad */
-        flex: 0 0 50% !important; 
-        max-width: 50% !important;
-        
-        /* Ajustamos el espaciado interno para que el contenido respire 
-           pero los bordes se mantengan alineados con el menú */
-        padding-left: 15px !important;
-        padding-right: 15px !important;
-    }
-    
-    /* Quitamos el espacio exterior sobrante de las esquinas para el ras milimétrico */
-    #abilities .row-cols-1.row-cols-md-2 > .col:first-child,
-    .habilidades .row-cols-1.row-cols-md-2 > .col:first-child {
-        padding-left: 0 !important; /* Pega la tarjeta izquierda con ARIEL */
-    }
-    
-    #abilities .row-cols-1.row-cols-md-2 > .col:last-child,
-    .habilidades .row-cols-1.row-cols-md-2 > .col:last-child {
-        padding-right: 0 !important; /* Pega la tarjeta derecha con Contacto */
+        flex: 0 0 48% !important;
+        max-width: 48% !important;
+        padding: 0 !important;
+        transition: all 0.5s ease !important;
     }
 }
 
+
 /* ==========================================================================
-   RESPONSIVE SEGURO PARA PANTALLAS PEQUEÑAS
+   ESTADO CUANDO BAJAS EL MOUSE (Activado por tu JavaScript)
+   ========================================================================== */
+
+/* Cuando haces scroll (> 50px), el JS mete esta clase y las tarjetas se cierran */
+#abilities .row-cols-1.row-cols-md-2.tarjetas-encajadas,
+.habilidades .row-cols-1.row-cols-md-2.tarjetas-encajadas {
+    /* El nav se queda en 1200px, pero las tarjetas se achican a este valor: */
+    max-width: 1000px !important; 
+}
+
+
+/* ==========================================================================
+   COMPORTAMIENTO RESPONSIVE (Celulares y Tablets)
    ========================================================================== */
 @media screen and (max-width: 1200px) {
-    .nav-inner {
-        width: 90% !important;
-    }
+    .nav-inner,
     #abilities .row-cols-1.row-cols-md-2,
     .habilidades .row-cols-1.row-cols-md-2 {
         width: 90% !important;
@@ -693,12 +691,15 @@ body {
 }
 
 @media screen and (max-width: 767px) {
+    /* En pantallas chicas cancelamos el achique del scroll para que no se rompa */
+    #abilities .row-cols-1.row-cols-md-2.tarjetas-encajadas,
+    .habilidades .row-cols-1.row-cols-md-2.tarjetas-encajadas {
+        max-width: 100% !important;
+    }
     #abilities .row-cols-1.row-cols-md-2 > .col,
     .habilidades .row-cols-1.row-cols-md-2 > .col {
         flex: 0 0 100% !important;
         max-width: 100% !important;
-        padding-left: 10px !important;
-        padding-right: 10px !important;
         margin-bottom: 20px;
     }
 }
