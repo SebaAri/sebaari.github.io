@@ -675,7 +675,7 @@ body {
 #abilities .row-cols-1.row-cols-md-2.tarjetas-encajadas,
 .habilidades .row-cols-1.row-cols-md-2.tarjetas-encajadas {
     /* El nav se queda en 1200px, pero las tarjetas se achican a este valor: */
-    max-width: 1200px !important; 
+    max-width: 1500px !important; 
 }
 
 
