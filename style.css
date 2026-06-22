@@ -622,44 +622,20 @@ body {
 }
 
 
-
-/* ==========================================================================
-   ESTADO INICIAL: Cuando estás arriba del todo (Scroll en 0)
-   ========================================================================== */
-.row-cols-1.row-cols-md-2,
-#abilities .row-cols-1.row-cols-md-2 {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    justify-content: space-between !important;
-    
-    width: 85% !important;
-    max-width: 1200px !important; /* <-- ARRIBA: Se abren GRANDES hasta aquí */
-    margin: 0 auto !important;
-    padding: 0 !important;
-    
-    /* Esta línea hace que cuando el JS actúe, el cambio de tamaño sea suave */
-    transition: max-width 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) !important; 
+/* Estado original de tu fila de tarjetas */
+.row-cols-1.row-cols-md-2 {
+  max-width: 100%; /* O el ancho grande que tenga actualmente */
+  margin: 0 auto;
+  transition: max-width 0.4s ease-in-out; /* Hace que el achique sea suave */
 }
 
-/* Fuerza el ancho de las tarjetas internas al inicio */
-@media screen and (min-width: 768px) {
-    .row-cols-1.row-cols-md-2 > .col,
-    #abilities .row-cols-1.row-cols-md-2 > .col {
-        width: 48% !important; 
-        max-width: 48% !important;
-        flex: 0 0 48% !important; 
-    }
-    #abilities .card, .habilidades .card {
-        width: 100% !important;
-    }
+/* Estado cuando se baja el mouse (Activado por JS) */
+.row-cols-1.row-cols-md-2.tarjetas-encajadas {
+  /* Pon aquí el ancho exacto donde se alinea con Ariel y Contacto */
+  max-width: 1050px; 
 }
 
-/* ==========================================================================
-   ESTADO CON SCROLL: Cuando bajas el mouse (Scroll > 50px)
-   ========================================================================== */
-/* Cuando el JS de arriba agrega 'tarjetas-encajadas', el CSS activa esto: */
-.row-cols-1.row-cols-md-2.tarjetas-encajadas,
-#abilities .row-cols-1.row-cols-md-2.tarjetas-encajadas {
-    max-width: 920px !important; /* <-- ABAJO: Se encogen automáticamente a esto */
+/* Ajuste para que las tarjetas internas se adapten fluidamente */
+.row-cols-1.row-cols-md-2.tarjetas-encajadas .col {
+  transition: all 0.4s ease-in-out;
 }
