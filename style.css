@@ -341,74 +341,64 @@ body {
 }
 
 
-
 /* ==========================================================================
-   ALINEACIÓN MILIMÉTRICA: MENÚ VS TARJETAS BOOTSTRAP
+   ALINEACIÓN EXACTA PARA LA SECCIÓN DE HABILIDADES
    ========================================================================== */
 
-/* Tu fila de tarjetas adaptada al 100% de la estructura de tu menú */
-.row-cols-1.row-cols-md-2 {
-    width: 85% !important;        /* Copia fiel del ancho de tu nav-inner */
-    max-width: 1200px !important;  /* Copia fiel del max-width de tu nav-inner */
+/* Apuntamos directamente a la fila de Bootstrap que está DENTRO de Habilidades */
+#abilities .row-cols-1.row-cols-md-2,
+.habilidades .row-cols-1.row-cols-md-2 {
+    width: 85% !important;         /* Fuerza el mismo porcentaje de tu .nav-inner */
+    max-width: 1200px !important;   /* Fuerza el mismo tope de pixeles de tu .nav-inner */
     margin-left: auto !important;
     margin-right: auto !important;
-    
-    /* El truco: Eliminamos el desfase de los paddings laterales de Bootstrap */
     padding-left: 0 !important;
     padding-right: 0 !important;
-    
-    transition: max-width 0.4s ease-in-out, width 0.4s ease-in-out; 
 }
 
-/* Forzamos a que la primera tarjeta se pegue por completo a la izquierda 
-   y la segunda tarjeta se pegue por completo a la derecha */
+/* Forzamos a quitar los márgenes internos de Bootstrap en los extremos 
+   para que se alineen al ras con ARIEL (izquierda) y CONTACTO (derecha) */
 @media screen and (min-width: 768px) {
-    .row-cols-1.row-cols-md-2 > .col:first-child {
-        padding-left: 0 !important;   /* Alineación exacta con ARIEL */
+    #abilities .row-cols-1.row-cols-md-2 > .col:first-child,
+    .habilidades .row-cols-1.row-cols-md-2 > .col:first-child {
+        padding-left: 0 !important;
     }
-    .row-cols-1.row-cols-md-2 > .col:last-child {
-        padding-right: 0 !important;  /* Alineación exacta con Contacto */
+    #abilities .row-cols-1.row-cols-md-2 > .col:last-child,
+    .habilidades .row-cols-1.row-cols-md-2 > .col:last-child {
+        padding-right: 0 !important;
     }
 }
-
-/* Estado con scroll activo (mantiene los mismos límites estrictos) */
-.row-cols-1.row-cols-md-2.tarjetas-encajadas {
-    width: 85% !important;
-    max-width: 1200px !important;
-}
-
 
 /* ==========================================================================
-   S_SINCRO RESPONSIVE (MEDIA QUERIES DE TU PROPIO MENÚ)
+   ADAPTACIÓN RESPONSIVE AUTOMÁTICA
    ========================================================================== */
 
+/* En tu captura estás en 988px. Tu menú ahí cambia a un ancho del 90%. 
+   Hacemos que tus tarjetas hagan exactamente lo mismo */
 @media screen and (max-width: 1200px) { 
-    .row-cols-1.row-cols-md-2 { 
-        width: 90% !important; /* Imita el cambio de tu .nav-inner a 90% */
+    #abilities .row-cols-1.row-cols-md-2,
+    .habilidades .row-cols-1.row-cols-md-2 { 
+        width: 90% !important; 
     } 
 }
 
+/* Cuando pasa a modo móvil, les devolvemos un padding seguro */
 @media screen and (max-width: 992px) { 
-    .row-cols-1.row-cols-md-2 { 
-        width: 90% !important;
-        max-width: 100% !important;
-    }
-    /* En móviles, como las tarjetas se apilan una abajo de la otra, 
-       les devolvemos el padding parejo para que no toquen los bordes */
-    .row-cols-1.row-cols-md-2 > .col {
-        padding-left: calc(var(--bs-gutter-x) * .5) !important;
-        padding-right: calc(var(--bs-gutter-x) * .5) !important;
+    #abilities .row-cols-1.row-cols-md-2 > .col,
+    .habilidades .row-cols-1.row-cols-md-2 > .col {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
     }
 }
 
 @media screen and (max-width: 400px) {
-    .row-cols-1.row-cols-md-2 {
+    #abilities .row-cols-1.row-cols-md-2,
+    .habilidades .row-cols-1.row-cols-md-2 {
         width: 100% !important;
         padding-left: 10px !important;
         padding-right: 10px !important;
     }
 }
-
 
 
 
