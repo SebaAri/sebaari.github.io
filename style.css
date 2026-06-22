@@ -626,19 +626,19 @@ body {
 
 
 
-
 /* ==========================================================================
-   CONFIGURACIÓN INICIAL: NAV GIGANTE (1200px) + TARJETAS NORMALES
+   CONFIGURACIÓN INICIAL: NAV GIGANTE (1200px) + TARJETAS GRANDES
    ========================================================================== */
 
-/* Tu barra de navegación no se mueve, se queda abierta en 1200px siempre */
+/* Tu barra de navegación fija en 1200px */
 .nav-inner {
     width: 85% !important;
     max-width: 1200px !important; 
     margin: 0 auto !important;
 }
 
-/* Estado inicial de las tarjetas: se abren al mismo ancho del nav */
+/* Forzamos el estado inicial de la fila limpianzo cualquier residuo de CSS viejo */
+.row-cols-1.row-cols-md-2,
 #abilities .row-cols-1.row-cols-md-2,
 .habilidades .row-cols-1.row-cols-md-2 {
     display: flex !important;
@@ -647,19 +647,19 @@ body {
     justify-content: space-between !important;
     
     width: 85% !important;
-    max-width: 1200px !important; /* Arrancan del mismo ancho que el nav */
+    max-width: 1200px !important; /* <--- Esto garantiza que inicien GRANDES e idénticas al menú */
     margin: 0 auto !important;
     padding: 0 !important;
     
-    /* Esta línea es clave para que el cambio de tamaño sea una animación suave */
     transition: max-width 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) !important; 
 }
 
-/* Tamaño de las columnas en el estado inicial */
+/* Tamaño de las columnas para que aprovechen el 1200px inicial */
 @media screen and (min-width: 768px) {
+    .row-cols-1.row-cols-md-2 > .col,
     #abilities .row-cols-1.row-cols-md-2 > .col,
     .habilidades .row-cols-1.row-cols-md-2 > .col {
-        flex: 0 0 48% !important;
+        flex: 0 0 48% !important; /* Casi la mitad de 1200px = ¡Tarjetas gigantes de ~580px! */
         max-width: 48% !important;
         padding: 0 !important;
         transition: all 0.5s ease !important;
@@ -668,22 +668,23 @@ body {
 
 
 /* ==========================================================================
-   ESTADO CUANDO BAJAS EL MOUSE (Activado por tu JavaScript)
+   ESTADO CUANDO BAJAS EL MOUSE (¡Aquí se encogen!)
    ========================================================================== */
 
-/* Cuando haces scroll (> 50px), el JS mete esta clase y las tarjetas se cierran */
+/* Al bajar el mouse, JS inyecta la clase y estas reglas obligan a cerrar el contenedor */
+.row-cols-1.row-cols-md-2.tarjetas-encajadas,
 #abilities .row-cols-1.row-cols-md-2.tarjetas-encajadas,
 .habilidades .row-cols-1.row-cols-md-2.tarjetas-encajadas {
-    /* El nav se queda en 1200px, pero las tarjetas se achican a este valor: */
-    max-width: 920px !important; 
+    max-width: 920px !important; /* <--- Se achican suavemente a 920px hacia el centro */
 }
 
 
 /* ==========================================================================
-   COMPORTAMIENTO RESPONSIVE (Celulares y Tablets)
+   COMPORTAMIENTO RESPONSIVE REFORZADO
    ========================================================================== */
 @media screen and (max-width: 1200px) {
     .nav-inner,
+    .row-cols-1.row-cols-md-2,
     #abilities .row-cols-1.row-cols-md-2,
     .habilidades .row-cols-1.row-cols-md-2 {
         width: 90% !important;
@@ -691,11 +692,13 @@ body {
 }
 
 @media screen and (max-width: 767px) {
-    /* En pantallas chicas cancelamos el achique del scroll para que no se rompa */
+    .row-cols-1.row-cols-md-2.tarjetas-encajadas,
     #abilities .row-cols-1.row-cols-md-2.tarjetas-encajadas,
     .habilidades .row-cols-1.row-cols-md-2.tarjetas-encajadas {
         max-width: 100% !important;
     }
+    
+    .row-cols-1.row-cols-md-2 > .col,
     #abilities .row-cols-1.row-cols-md-2 > .col,
     .habilidades .row-cols-1.row-cols-md-2 > .col {
         flex: 0 0 100% !important;
