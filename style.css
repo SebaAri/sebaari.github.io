@@ -341,40 +341,44 @@ body {
 }
 
 
+
 /* ==========================================================================
-   ALINEACIÓN EXACTA PARA LA SECCIÓN DE HABILIDADES
+   REESTRUCTURACIÓN DE LA GRILLA DE HABILIDADES (ALINEACIÓN REPARADA)
    ========================================================================== */
 
-/* Apuntamos directamente a la fila de Bootstrap que está DENTRO de Habilidades */
+/* 1. Forzamos a la fila a actuar como el contenedor de tu menú (.nav-inner) */
 #abilities .row-cols-1.row-cols-md-2,
 .habilidades .row-cols-1.row-cols-md-2 {
-    width: 85% !important;         /* Fuerza el mismo porcentaje de tu .nav-inner */
-    max-width: 1200px !important;   /* Fuerza el mismo tope de pixeles de tu .nav-inner */
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important; /* Separa las dos tarjetas a los extremos */
+    
+    width: 85% !important;         /* Idéntico a tu .nav-inner */
+    max-width: 1200px !important;   /* Idéntico a tu .nav-inner */
     margin-left: auto !important;
     margin-right: auto !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    
+    padding: 0 !important;
 }
 
-/* Forzamos a quitar los márgenes internos de Bootstrap en los extremos 
-   para que se alineen al ras con ARIEL (izquierda) y CONTACTO (derecha) */
+/* 2. Controlamos el ancho de las dos tarjetas de forma individual */
 @media screen and (min-width: 768px) {
-    #abilities .row-cols-1.row-cols-md-2 > .col:first-child,
-    .habilidades .row-cols-1.row-cols-md-2 > .col:first-child {
-        padding-left: 0 !important;
-    }
-    #abilities .row-cols-1.row-cols-md-2 > .col:last-child,
-    .habilidades .row-cols-1.row-cols-md-2 > .col:last-child {
-        padding-right: 0 !important;
+    #abilities .row-cols-1.row-cols-md-2 > .col,
+    .habilidades .row-cols-1.row-cols-md-2 > .col {
+        /* Hacemos que cada tarjeta ocupe un poco menos del 50% (ej. 48%) 
+           para que se empujen por completo hacia los bordes exactos del menú */
+        flex: 0 0 48% !important;
+        max-width: 48% !important;
+        padding: 0 !important; /* Eliminamos el espacio fantasma de Bootstrap */
     }
 }
 
 /* ==========================================================================
-   ADAPTACIÓN RESPONSIVE AUTOMÁTICA
+   SINCRONIZACIÓN RESPONSIVE DE LAS TARJETAS
    ========================================================================== */
 
-/* En tu captura estás en 988px. Tu menú ahí cambia a un ancho del 90%. 
-   Hacemos que tus tarjetas hagan exactamente lo mismo */
+/* En 1200px tu menú cambia a width: 90% */
 @media screen and (max-width: 1200px) { 
     #abilities .row-cols-1.row-cols-md-2,
     .habilidades .row-cols-1.row-cols-md-2 { 
@@ -382,21 +386,22 @@ body {
     } 
 }
 
-/* Cuando pasa a modo móvil, les devolvemos un padding seguro */
-@media screen and (max-width: 992px) { 
+/* En pantallas móviles (menores a 768px), vuelven a ocupar el 100% de ancho */
+@media screen and (max-width: 767px) { 
     #abilities .row-cols-1.row-cols-md-2 > .col,
     .habilidades .row-cols-1.row-cols-md-2 > .col {
-        padding-left: 15px !important;
-        padding-right: 15px !important;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        margin-bottom: 20px; /* Separación vertical entre ellas */
     }
 }
 
+/* En 400px tu menú pasa a ocupar el 100% */
 @media screen and (max-width: 400px) {
     #abilities .row-cols-1.row-cols-md-2,
     .habilidades .row-cols-1.row-cols-md-2 {
         width: 100% !important;
-        padding-left: 10px !important;
-        padding-right: 10px !important;
+        padding: 0 10px !important;
     }
 }
 
