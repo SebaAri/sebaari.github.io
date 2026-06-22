@@ -296,10 +296,12 @@ html, body {
     background-color: inherit; 
 }
 
-/* --- SECCIÓN HABILIDADES (ALINEACIÓN REPARADA) --- */
+/* --- SECCIÓN HABILIDADES (ALINEACIÓN Y ESPACIADO REPARADO) --- */
 .habilidades {
     width: 100%;
 }
+
+
 .habilidades .container {
     width: 85%;
     max-width: 1200px;
@@ -311,7 +313,18 @@ html, body {
     margin-left: 0 !important;
     margin-right: 0 !important;
     width: 100% !important;
-    justify-content: center; 
+    
+    display: flex !important;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    gap: 50px; /* <--- MODIFICA ESTE VALOR para dar más o menos espacio entre las tarjetas */
+}
+
+.habilidades .container .row .col {
+    padding: 0 !important; 
+    flex: 1 1 calc(50% - 20px); 
+    min-width: 280px; 
 }
 
 .tech-icons i {
@@ -366,12 +379,6 @@ html, body {
 .habilidades .card h5,
 .habilidades .card h6 {
     color: #ffffff !important;
-}
-
-.habilidades .card .text-muted,
-.habilidades .card small,
-.habilidades .card .card-subtitle {
-    color: #b0bec5 !important;
 }
 
 .habilidades .card .text-muted,
