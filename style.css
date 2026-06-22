@@ -623,74 +623,43 @@ body {
 
 
 
-
-
 /* ==========================================================================
-   ENFOQUE INFALIBLE: ROMPER EL CÁLCULO DE BOOTSTRAP
+   ESTADO INICIAL: Cuando estás arriba del todo (Scroll en 0)
    ========================================================================== */
-
-/* 1. Forzamos a la fila a ser un contenedor flexible limpio de 1200px */
 .row-cols-1.row-cols-md-2,
-#abilities .row-cols-1.row-cols-md-2,
-.habilidades .row-cols-1.row-cols-md-2 {
+#abilities .row-cols-1.row-cols-md-2 {
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: wrap !important;
     justify-content: space-between !important;
     
     width: 85% !important;
-    max-width: 1200px !important; /* <--- Fuerza el tamaño del nav */
+    max-width: 1200px !important; /* <-- ARRIBA: Se abren GRANDES hasta aquí */
     margin: 0 auto !important;
     padding: 0 !important;
     
+    /* Esta línea hace que cuando el JS actúe, el cambio de tamaño sea suave */
     transition: max-width 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) !important; 
 }
 
-/* 2. FORZADO INDIVIDUAL DE TARJETAS (Aquí obligamos a que crezcan) */
+/* Fuerza el ancho de las tarjetas internas al inicio */
 @media screen and (min-width: 768px) {
     .row-cols-1.row-cols-md-2 > .col,
-    #abilities .row-cols-1.row-cols-md-2 > .col,
-    .habilidades .row-cols-1.row-cols-md-2 > .col {
-        /* Rompemos el ancho automático que Bootstrap les impone */
+    #abilities .row-cols-1.row-cols-md-2 > .col {
         width: 48% !important; 
         max-width: 48% !important;
         flex: 0 0 48% !important; 
-        
-        padding: 0 !important;
     }
-    
-    /* Obligamos a los elementos internos de la tarjeta (.card) a ocupar todo su ancho */
-    #abilities .card,
-    .habilidades .card {
+    #abilities .card, .habilidades .card {
         width: 100% !important;
-        max-width: 100% !important;
-        display: block !important;
     }
 }
 
 /* ==========================================================================
-   ESTADO CON SCROLL ACTIVO (Achique)
+   ESTADO CON SCROLL: Cuando bajas el mouse (Scroll > 50px)
    ========================================================================== */
+/* Cuando el JS de arriba agrega 'tarjetas-encajadas', el CSS activa esto: */
 .row-cols-1.row-cols-md-2.tarjetas-encajadas,
-#abilities .row-cols-1.row-cols-md-2.tarjetas-encajadas,
-.habilidades .row-cols-1.row-cols-md-2.tarjetas-encajadas {
-    max-width: 920px !important; 
-}
-
-/* ==========================================================================
-   COMPORTAMIENTO RESPONSIVE
-   ========================================================================== */
-@media screen and (max-width: 1200px) {
-    .row-cols-1.row-cols-md-2, #abilities .row-cols-1.row-cols-md-2 {
-        width: 90% !important;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .row-cols-1.row-cols-md-2 > .col, #abilities .row-cols-1.row-cols-md-2 > .col {
-        width: 100% !important;
-        max-width: 100% !important;
-        flex: 0 0 100% !important;
-        margin-bottom: 20px;
-    }
+#abilities .row-cols-1.row-cols-md-2.tarjetas-encajadas {
+    max-width: 920px !important; /* <-- ABAJO: Se encogen automáticamente a esto */
 }
