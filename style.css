@@ -626,20 +626,60 @@ body {
 
 
 
-/* Estado original de tu fila de tarjetas */
-.row-cols-1.row-cols-md-2 {
-  max-width: 960px !important; /* O el ancho grande que tenga actualmente */
-  margin: 0 auto;
-  transition: max-width 0.4s ease-in-out; /* Hace que el achique sea suave */
+
+/* ==========================================================================
+   ALINEACIÓN OPTIMIZADA: TARJETAS GRANDES + MENÚ ADAPTADO
+   ========================================================================== */
+
+/* 1. Expandimos tu menú para que coincida con el ancho amplio de la grilla */
+.nav-inner {
+    width: 85% !important;
+    max-width: 1200px !important; /* <--- Subimos a 1200px para que ARIEL y Contacto se abran a los extremos */
+    margin: 0 auto !important;
 }
 
-/* Estado cuando se baja el mouse (Activado por JS) */
-.row-cols-1.row-cols-md-2.tarjetas-encajadas {
-  /* Pon aquí el ancho exacto donde se alinea con Ariel y Contacto */
-  max-width: 1140px; 
+/* 2. Reestablecemos la fila de Bootstrap para que las tarjetas sean GRANDES */
+#abilities .row-cols-1.row-cols-md-2,
+.habilidades .row-cols-1.row-cols-md-2 {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important; /* Mantiene una a la izquierda y otra a la derecha */
+    
+    width: 85% !important;         /* Mismo porcentaje que el menú */
+    max-width: 1200px !important;   /* Mismo ancho máximo amplio */
+    margin: 0 auto !important;
+    padding: 0 !important;
 }
 
-/* Ajuste para que las tarjetas internas se adapten fluidamente */
-.row-cols-1.row-cols-md-2.tarjetas-encajadas .col {
-  transition: all 0.4s ease-in-out;
+/* 3. Tamaño de las tarjetas en escritorio (Grandes y estéticas) */
+@media screen and (min-width: 768px) {
+    #abilities .row-cols-1.row-cols-md-2 > .col,
+    .habilidades .row-cols-1.row-cols-md-2 > .col {
+        /* Cada tarjeta usará el 48% de 1200px (¡ahora medirán casi 580px cada una!) */
+        flex: 0 0 48% !important; 
+        max-width: 48% !important;
+        padding: 0 !important; 
+    }
+}
+
+/* ==========================================================================
+   COMPORTAMIENTO RESPONSIVE (Sincronizado con tus Media Queries)
+   ========================================================================== */
+@media screen and (max-width: 1200px) {
+    .nav-inner,
+    #abilities .row-cols-1.row-cols-md-2,
+    .habilidades .row-cols-1.row-cols-md-2 {
+        width: 90% !important; /* En pantallas medianas bajan juntas al 90% */
+    }
+}
+
+@media screen and (max-width: 767px) {
+    /* En celulares se apilan al 100% una abajo de la otra para máxima legibilidad */
+    #abilities .row-cols-1.row-cols-md-2 > .col,
+    .habilidades .row-cols-1.row-cols-md-2 > .col {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        margin-bottom: 25px; 
+    }
 }
