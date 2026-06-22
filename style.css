@@ -339,28 +339,52 @@ body {
     transform: translateY(-10px) !important; 
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15) !important; 
 }
+
+
+
+/* ==========================================================================
+   ALINEACIÓN MILIMÉTRICA: MENÚ VS TARJETAS BOOTSTRAP
+   ========================================================================== */
+
+/* Tu fila de tarjetas adaptada al 100% de la estructura de tu menú */
 .row-cols-1.row-cols-md-2 {
-    width: 85% !important;        
-    max-width: 1200px !important;  
+    width: 85% !important;        /* Copia fiel del ancho de tu nav-inner */
+    max-width: 1200px !important;  /* Copia fiel del max-width de tu nav-inner */
     margin-left: auto !important;
     margin-right: auto !important;
+    
+    /* El truco: Eliminamos el desfase de los paddings laterales de Bootstrap */
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    
     transition: max-width 0.4s ease-in-out, width 0.4s ease-in-out; 
 }
 
+/* Forzamos a que la primera tarjeta se pegue por completo a la izquierda 
+   y la segunda tarjeta se pegue por completo a la derecha */
+@media screen and (min-width: 768px) {
+    .row-cols-1.row-cols-md-2 > .col:first-child {
+        padding-left: 0 !important;   /* Alineación exacta con ARIEL */
+    }
+    .row-cols-1.row-cols-md-2 > .col:last-child {
+        padding-right: 0 !important;  /* Alineación exacta con Contacto */
+    }
+}
+
+/* Estado con scroll activo (mantiene los mismos límites estrictos) */
 .row-cols-1.row-cols-md-2.tarjetas-encajadas {
     width: 85% !important;
-    max-width: 1200px !important; 
+    max-width: 1200px !important;
 }
 
-.row-cols-1.row-cols-md-2.tarjetas-encajadas .col {
-    transition: all 0.4s ease-in-out;
-}
 
-/* COMPORTAMIENTO RESPONSIVE (MEDIA QUERIES */
+/* ==========================================================================
+   S_SINCRO RESPONSIVE (MEDIA QUERIES DE TU PROPIO MENÚ)
+   ========================================================================== */
 
 @media screen and (max-width: 1200px) { 
     .row-cols-1.row-cols-md-2 { 
-        width: 90% !important; 
+        width: 90% !important; /* Imita el cambio de tu .nav-inner a 90% */
     } 
 }
 
@@ -368,15 +392,25 @@ body {
     .row-cols-1.row-cols-md-2 { 
         width: 90% !important;
         max-width: 100% !important;
-    } 
+    }
+    /* En móviles, como las tarjetas se apilan una abajo de la otra, 
+       les devolvemos el padding parejo para que no toquen los bordes */
+    .row-cols-1.row-cols-md-2 > .col {
+        padding-left: calc(var(--bs-gutter-x) * .5) !important;
+        padding-right: calc(var(--bs-gutter-x) * .5) !important;
+    }
 }
 
 @media screen and (max-width: 400px) {
     .row-cols-1.row-cols-md-2 {
         width: 100% !important;
-        padding: 0 10px !important; 
+        padding-left: 10px !important;
+        padding-right: 10px !important;
     }
 }
+
+
+
 
 /* --- AGREGADO: VISIBILIDAD DE TEXTOS Y TÍTULOS EN TARJETAS --- */
 
