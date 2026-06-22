@@ -624,36 +624,12 @@ body {
 
 
 
-/* ==========================================================================
-   1. CONFIGURACIÓN DEL MENÚ SUPERIOR
-   ========================================================================== */
-.nav-inner {
-    width: 85% !important;
-    max-width: 1200px !important; 
-    margin: 0 auto !important;
-}
 
 /* ==========================================================================
-   2. DESBLOQUEO DE CONTENEDORES PADRE (Liberar espacio)
+   ENFOQUE INFALIBLE: ROMPER EL CÁLCULO DE BOOTSTRAP
    ========================================================================== */
-#abilities, 
-.habilidades,
-#abilities .container,
-#abilities .container-fluid {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-}
 
-.information {
-    max-width: 1200px !important;
-    width: 85% !important;
-}
-
-/* ==========================================================================
-   3. CONFIGURACIÓN DE LA FILA (Estado Inicial - 1200px)
-   ========================================================================== */
+/* 1. Forzamos a la fila a ser un contenedor flexible limpio de 1200px */
 .row-cols-1.row-cols-md-2,
 #abilities .row-cols-1.row-cols-md-2,
 .habilidades .row-cols-1.row-cols-md-2 {
@@ -663,58 +639,58 @@ body {
     justify-content: space-between !important;
     
     width: 85% !important;
-    max-width: 1200px !important; /* <--- Inician grandes alineadas al nav */
+    max-width: 1200px !important; /* <--- Fuerza el tamaño del nav */
     margin: 0 auto !important;
     padding: 0 !important;
     
     transition: max-width 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) !important; 
 }
 
-/* Tamaño de las columnas individuales en escritorio */
+/* 2. FORZADO INDIVIDUAL DE TARJETAS (Aquí obligamos a que crezcan) */
 @media screen and (min-width: 768px) {
     .row-cols-1.row-cols-md-2 > .col,
     #abilities .row-cols-1.row-cols-md-2 > .col,
     .habilidades .row-cols-1.row-cols-md-2 > .col {
-        flex: 0 0 48% !important; /* Ancho cómodo y grande al inicio */
+        /* Rompemos el ancho automático que Bootstrap les impone */
+        width: 48% !important; 
         max-width: 48% !important;
+        flex: 0 0 48% !important; 
+        
         padding: 0 !important;
-        transition: all 0.5s ease !important;
+    }
+    
+    /* Obligamos a los elementos internos de la tarjeta (.card) a ocupar todo su ancho */
+    #abilities .card,
+    .habilidades .card {
+        width: 100% !important;
+        max-width: 100% !important;
+        display: block !important;
     }
 }
 
 /* ==========================================================================
-   4. ESTADO CON SCROLL ACTIVO (Achique - 920px)
+   ESTADO CON SCROLL ACTIVO (Achique)
    ========================================================================== */
 .row-cols-1.row-cols-md-2.tarjetas-encajadas,
 #abilities .row-cols-1.row-cols-md-2.tarjetas-encajadas,
 .habilidades .row-cols-1.row-cols-md-2.tarjetas-encajadas {
-    max-width: 920px !important; /* <--- Se contraen elegantemente aquí */
+    max-width: 920px !important; 
 }
 
 /* ==========================================================================
-   5. COMPORTAMIENTO RESPONSIVE (Tablets y Celulares)
+   COMPORTAMIENTO RESPONSIVE
    ========================================================================== */
 @media screen and (max-width: 1200px) {
-    .nav-inner,
-    .row-cols-1.row-cols-md-2,
-    #abilities .row-cols-1.row-cols-md-2,
-    .habilidades .row-cols-1.row-cols-md-2 {
+    .row-cols-1.row-cols-md-2, #abilities .row-cols-1.row-cols-md-2 {
         width: 90% !important;
     }
 }
 
 @media screen and (max-width: 767px) {
-    .row-cols-1.row-cols-md-2.tarjetas-encajadas,
-    #abilities .row-cols-1.row-cols-md-2.tarjetas-encajadas,
-    .habilidades .row-cols-1.row-cols-md-2.tarjetas-encajadas {
+    .row-cols-1.row-cols-md-2 > .col, #abilities .row-cols-1.row-cols-md-2 > .col {
+        width: 100% !important;
         max-width: 100% !important;
-    }
-    
-    .row-cols-1.row-cols-md-2 > .col,
-    #abilities .row-cols-1.row-cols-md-2 > .col,
-    .habilidades .row-cols-1.row-cols-md-2 > .col {
         flex: 0 0 100% !important;
-        max-width: 100% !important;
         margin-bottom: 20px;
     }
-} /* <--- Llave de cierre corregida */
+}
