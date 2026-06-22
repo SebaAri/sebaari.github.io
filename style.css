@@ -634,7 +634,7 @@ body {
 /* Estado cuando se baja el mouse (Activado por JS) */
 .row-cols-1.row-cols-md-2.tarjetas-encajadas {
   /* Pon aquí el ancho exacto donde se alinea con Ariel y Contacto */
-  max-width: 1140px; 
+  max-width: 1400px; 
 }
 
 /* Ajuste para que las tarjetas internas se adapten fluidamente */
@@ -651,6 +651,11 @@ header .d-flex,
     margin-left: auto !important;
     width: 100%;
 }
+
+
+
+
+
 
 
 
