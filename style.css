@@ -322,13 +322,6 @@ body {
 }
 
 
-/* --- EXTENSIÓN PARA EL OVERLAY EN DISPOSITIVOS MÓVILES --- */
-.grid-projects .g-items:hover .overlay,
-.grid-projects .g-items:active .overlay { 
-    height: 100%; 
-    background-color: rgba(0, 63, 71, 0.85); 
-}
-
 .habilidades .card-title {
     color: rgb(0, 25, 28) !important;     
 }
@@ -345,6 +338,23 @@ body {
 .habilidades .card:hover {
     transform: translateY(-10px) !important; 
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15) !important; 
+}
+
+/* Estado original de tu fila de tarjetas */
+.row-cols-1.row-cols-md-2 {
+  max-width: 1100px !important; 
+  margin: 0 auto;
+  transition: max-width 0.4s ease-in-out; 
+}
+
+/* Estado cuando se baja el mouse (Activado por JS) */
+.row-cols-1.row-cols-md-2.tarjetas-encajadas {
+  max-width: 1140px; 
+}
+
+/* Ajuste para que las tarjetas internas se adapten fluidamente */
+.row-cols-1.row-cols-md-2.tarjetas-encajadas .col {
+  transition: all 0.4s ease-in-out;
 }
 
 /* --- AGREGADO: VISIBILIDAD DE TEXTOS Y TÍTULOS EN TARJETAS --- */
@@ -450,7 +460,17 @@ body {
     place-items: center; 
     transition: height 0.3s ease;
     
-} 
+}
+
+
+
+/* --- EXTENSIÓN PARA EL OVERLAY EN DISPOSITIVOS MÓVILES --- */
+.grid-projects .g-items:hover .overlay,
+.grid-projects .g-items:active .overlay { 
+    height: 100%; 
+    background-color: rgba(0, 63, 71, 0.85); 
+}
+
 /* --- OPTIMIZACIÓN DE VISIBILIDAD PARA PROYECTOS EN PANTALLAS PEQUEÑAS --- */
 /* 1. Transición base para suavizar la animación en móviles */
 .grid-projects .g-items {
@@ -621,25 +641,3 @@ body {
     .information p { color: white; } 
 }
 
-
-
-
-
-
-/* Estado original de tu fila de tarjetas */
-.row-cols-1.row-cols-md-2 {
-  max-width: 1100px !important; /* O el ancho grande que tenga actualmente */
-  margin: 0 auto;
-  transition: max-width 0.4s ease-in-out; /* Hace que el achique sea suave */
-}
-
-/* Estado cuando se baja el mouse (Activado por JS) */
-.row-cols-1.row-cols-md-2.tarjetas-encajadas {
-  /* Pon aquí el ancho exacto donde se alinea con Ariel y Contacto */
-  max-width: 1140px; 
-}
-
-/* Ajuste para que las tarjetas internas se adapten fluidamente */
-.row-cols-1.row-cols-md-2.tarjetas-encajadas .col {
-  transition: all 0.4s ease-in-out;
-}
