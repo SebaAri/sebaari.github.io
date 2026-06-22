@@ -300,19 +300,18 @@ html, body {
 .habilidades {
     width: 100%;
 }
-
-.habilidades .container-cards {
+.habilidades .container {
     width: 85%;
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 0;
+    margin: 0 auto !important; 
+    padding: 0 !important;
 }
 
-/* Remueve los márgenes negativos de las filas de Bootstrap */
-.habilidades .container-cards .row {
+.habilidades .container .row {
     margin-left: 0 !important;
     margin-right: 0 !important;
-    width: 100%;
+    width: 100% !important;
+    justify-content: center; 
 }
 
 .tech-icons i {
@@ -338,14 +337,14 @@ html, body {
     color: rgb(0, 25, 28) !important;     
 }
 
-/* --- EFECTO FLOTANTE PARA LAS TARJETAS --- */
+/* --- EFECTO FLOTANTE Y CONTROL DE ANCHO PARA LAS TARJETAS --- */
 .habilidades .card {
     transition: transform 0.3s ease, box-shadow 0.3s ease !important;
     background-color: rgba(255, 255, 255, 0.05) !important; 
     border: 1px solid rgba(0, 63, 71, 0.5) !important;       
     backdrop-filter: blur(4px) !important;
+    width: 100% !important; 
     max-width: 100% !important;
-    width: 100%;
 }
 
 .habilidades .card:hover {
@@ -353,7 +352,7 @@ html, body {
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15) !important; 
 }
 
-/* Visibilidad textos de tarjetas */
+/* Visibilidad de textos dentro de las tarjetas */
 .habilidades .card,
 .habilidades .card-title,
 .habilidades .card-body,
@@ -367,6 +366,12 @@ html, body {
 .habilidades .card h5,
 .habilidades .card h6 {
     color: #ffffff !important;
+}
+
+.habilidades .card .text-muted,
+.habilidades .card small,
+.habilidades .card .card-subtitle {
+    color: #b0bec5 !important;
 }
 
 .habilidades .card .text-muted,
@@ -593,6 +598,9 @@ html, body {
     }
     .habilidades .container-cards .row {
         gap: 16px;
+    }
+    .habilidades .container {
+        width: 90%;
     }
 }
 
