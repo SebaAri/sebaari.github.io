@@ -322,6 +322,13 @@ body {
 }
 
 
+/* --- EXTENSIÓN PARA EL OVERLAY EN DISPOSITIVOS MÓVILES --- */
+.grid-projects .g-items:hover .overlay,
+.grid-projects .g-items:active .overlay { 
+    height: 100%; 
+    background-color: rgba(0, 63, 71, 0.85); 
+}
+
 .habilidades .card-title {
     color: rgb(0, 25, 28) !important;     
 }
@@ -339,73 +346,6 @@ body {
     transform: translateY(-10px) !important; 
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15) !important; 
 }
-
-
-
-/* ==========================================================================
-   REESTRUCTURACIÓN DE LA GRILLA DE HABILIDADES (ALINEACIÓN REPARADA)
-   ========================================================================== */
-
-/* 1. Forzamos a la fila a actuar como el contenedor de tu menú (.nav-inner) */
-#abilities .row-cols-1.row-cols-md-2,
-.habilidades .row-cols-1.row-cols-md-2 {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    justify-content: space-between !important; /* Separa las dos tarjetas a los extremos */
-    
-    width: 85% !important;         /* Idéntico a tu .nav-inner */
-    max-width: 1200px !important;   /* Idéntico a tu .nav-inner */
-    margin-left: auto !important;
-    margin-right: auto !important;
-    
-    padding: 0 !important;
-}
-
-/* 2. Controlamos el ancho de las dos tarjetas de forma individual */
-@media screen and (min-width: 768px) {
-    #abilities .row-cols-1.row-cols-md-2 > .col,
-    .habilidades .row-cols-1.row-cols-md-2 > .col {
-        /* Hacemos que cada tarjeta ocupe un poco menos del 50% (ej. 48%) 
-           para que se empujen por completo hacia los bordes exactos del menú */
-        flex: 0 0 48% !important;
-        max-width: 48% !important;
-        padding: 0 !important; /* Eliminamos el espacio fantasma de Bootstrap */
-    }
-}
-
-/* ==========================================================================
-   SINCRONIZACIÓN RESPONSIVE DE LAS TARJETAS
-   ========================================================================== */
-
-/* En 1200px tu menú cambia a width: 90% */
-@media screen and (max-width: 1200px) { 
-    #abilities .row-cols-1.row-cols-md-2,
-    .habilidades .row-cols-1.row-cols-md-2 { 
-        width: 90% !important; 
-    } 
-}
-
-/* En pantallas móviles (menores a 768px), vuelven a ocupar el 100% de ancho */
-@media screen and (max-width: 767px) { 
-    #abilities .row-cols-1.row-cols-md-2 > .col,
-    .habilidades .row-cols-1.row-cols-md-2 > .col {
-        flex: 0 0 100% !important;
-        max-width: 100% !important;
-        margin-bottom: 20px; /* Separación vertical entre ellas */
-    }
-}
-
-/* En 400px tu menú pasa a ocupar el 100% */
-@media screen and (max-width: 400px) {
-    #abilities .row-cols-1.row-cols-md-2,
-    .habilidades .row-cols-1.row-cols-md-2 {
-        width: 100% !important;
-        padding: 0 10px !important;
-    }
-}
-
-
 
 /* --- AGREGADO: VISIBILIDAD DE TEXTOS Y TÍTULOS EN TARJETAS --- */
 
@@ -510,17 +450,7 @@ body {
     place-items: center; 
     transition: height 0.3s ease;
     
-}
-
-
-
-/* --- EXTENSIÓN PARA EL OVERLAY EN DISPOSITIVOS MÓVILES --- */
-.grid-projects .g-items:hover .overlay,
-.grid-projects .g-items:active .overlay { 
-    height: 100%; 
-    background-color: rgba(0, 63, 71, 0.85); 
-}
-
+} 
 /* --- OPTIMIZACIÓN DE VISIBILIDAD PARA PROYECTOS EN PANTALLAS PEQUEÑAS --- */
 /* 1. Transición base para suavizar la animación en móviles */
 .grid-projects .g-items {
@@ -684,32 +614,6 @@ body {
     }
 }
 
-/* --- DISEÑO RESPONSIVE PARA EL ANCHO CONTROLADO DE LAS TARJETAS--- */
-/*Para pantallas grandes */
-@media (min-width: 992px) {
-    nav .d-flex, 
-    .navbar .container-fluid,
-    header .d-flex,
-    .row-cols-1.row-cols-md-2.tarjetas-encajadas { 
-        max-width: 920px !important; 
-        margin-right: auto !important;
-        margin-left: auto !important;
-        width: 100%;
-    }
-}
-
-/* Para pantallas pequeñas (móviles y tablets) */
-@media (max-width: 991px) {
-    nav .d-flex, 
-    .navbar .container-fluid,
-    header .d-flex,
-    .row-cols-1.row-cols-md-2.tarjetas-encajadas { 
-        max-width: 100% !important; 
-        padding-left: 15px !important;
-        padding-right: 15px !important;
-    }
-}
-
 /* Preferencias del Sistema (Modo Oscuro) */ 
 @media (prefers-color-scheme: dark) { 
     body { background-color: rgb(0, 25, 28); } 
@@ -717,3 +621,25 @@ body {
     .information p { color: white; } 
 }
 
+
+
+
+
+
+/* Estado original de tu fila de tarjetas */
+.row-cols-1.row-cols-md-2 {
+  max-width: 1000px; /* O el ancho grande que tenga actualmente */
+  margin: 0 auto;
+  transition: max-width 0.4s ease-in-out; /* Hace que el achique sea suave */
+}
+
+/* Estado cuando se baja el mouse (Activado por JS) */
+.row-cols-1.row-cols-md-2.tarjetas-encajadas {
+  /* Pon aquí el ancho exacto donde se alinea con Ariel y Contacto */
+  max-width: 1140px; 
+}
+
+/* Ajuste para que las tarjetas internas se adapten fluidamente */
+.row-cols-1.row-cols-md-2.tarjetas-encajadas .col {
+  transition: all 0.4s ease-in-out;
+}
