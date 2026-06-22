@@ -643,7 +643,7 @@ body {
 .habilidades .row-cols-1.row-cols-md-2 {
     display: flex !important;
     width: 100% !important;          /* Ocupa todo el ancho de su sección madre */
-    max-width: 1000px !important;    /* El mismo límite que tu menú */
+    max-width: 1200px !important;    /* El mismo límite que tu menú */
     margin-left: auto !important;
     margin-right: auto !important;
     
