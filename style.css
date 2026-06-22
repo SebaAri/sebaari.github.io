@@ -627,7 +627,7 @@ body {
 
 /* Estado original de tu fila de tarjetas */
 .row-cols-1.row-cols-md-2 {
-  max-width:992px; /* O el ancho grande que tenga actualmente */
+  max-width:1000px; /* O el ancho grande que tenga actualmente */
   margin: 0 auto;
   transition: max-width 0.4s ease-in-out; /* Hace que el achique sea suave */
 }
@@ -635,7 +635,7 @@ body {
 /* Estado cuando se baja el mouse (Activado por JS) */
 .row-cols-1.row-cols-md-2.tarjetas-encajadas {
   /* Pon aquí el ancho exacto donde se alinea con Ariel y Contacto */
-  max-width: 1140px; 
+  max-width: 1000px; 
 }
 
 /* Ajuste para que las tarjetas internas se adapten fluidamente */
@@ -649,9 +649,10 @@ nav .d-flex,
 .navbar .container-fluid,
 header .d-flex,
 .row-cols-1.row-cols-md-2.tarjetas-encajadas { 
-    max-width: 992px !important; /* <--- Ajustado a 920px */
+    max-width: 1000px !important; /* <--- Ajustado a 920px */
     margin-right: auto !important;
     margin-left: auto !important;
     width: 100%;
 }
+
 
