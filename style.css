@@ -634,6 +634,32 @@ body {
     }
 }
 
+/* --- DISEÑO RESPONSIVE PARA EL ANCHO CONTROLADO DE LAS TARJETAS--- */
+/*Para pantallas grandes */
+@media (min-width: 992px) {
+    nav .d-flex, 
+    .navbar .container-fluid,
+    header .d-flex,
+    .row-cols-1.row-cols-md-2.tarjetas-encajadas { 
+        max-width: 920px !important; 
+        margin-right: auto !important;
+        margin-left: auto !important;
+        width: 100%;
+    }
+}
+
+/* Para pantallas pequeñas (móviles y tablets) */
+@media (max-width: 991px) {
+    nav .d-flex, 
+    .navbar .container-fluid,
+    header .d-flex,
+    .row-cols-1.row-cols-md-2.tarjetas-encajadas { 
+        max-width: 100% !important; 
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+}
+
 /* Preferencias del Sistema (Modo Oscuro) */ 
 @media (prefers-color-scheme: dark) { 
     body { background-color: rgb(0, 25, 28); } 
