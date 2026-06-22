@@ -624,21 +624,36 @@ body {
 
 
 
-
-
-
 /* ==========================================================================
-   CONFIGURACIÓN INICIAL: NAV GIGANTE (1200px) + TARJETAS GRANDES
+   1. CONFIGURACIÓN DEL MENÚ SUPERIOR
    ========================================================================== */
-
-/* Tu barra de navegación fija en 1200px */
 .nav-inner {
     width: 85% !important;
     max-width: 1200px !important; 
     margin: 0 auto !important;
 }
 
-/* Forzamos el estado inicial de la fila limpianzo cualquier residuo de CSS viejo */
+/* ==========================================================================
+   2. DESBLOQUEO DE CONTENEDORES PADRE (Liberar espacio)
+   ========================================================================== */
+#abilities, 
+.habilidades,
+#abilities .container,
+#abilities .container-fluid {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.information {
+    max-width: 1200px !important;
+    width: 85% !important;
+}
+
+/* ==========================================================================
+   3. CONFIGURACIÓN DE LA FILA (Estado Inicial - 1200px)
+   ========================================================================== */
 .row-cols-1.row-cols-md-2,
 #abilities .row-cols-1.row-cols-md-2,
 .habilidades .row-cols-1.row-cols-md-2 {
@@ -648,40 +663,36 @@ body {
     justify-content: space-between !important;
     
     width: 85% !important;
-    max-width: 1200px !important; /* <--- Esto garantiza que inicien GRANDES e idénticas al menú */
+    max-width: 1200px !important; /* <--- Inician grandes alineadas al nav */
     margin: 0 auto !important;
     padding: 0 !important;
     
     transition: max-width 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) !important; 
 }
 
-/* Tamaño de las columnas para que aprovechen el 1200px inicial */
+/* Tamaño de las columnas individuales en escritorio */
 @media screen and (min-width: 768px) {
     .row-cols-1.row-cols-md-2 > .col,
     #abilities .row-cols-1.row-cols-md-2 > .col,
     .habilidades .row-cols-1.row-cols-md-2 > .col {
-        flex: 0 0 48% !important; /* Casi la mitad de 1200px = ¡Tarjetas gigantes de ~580px! */
+        flex: 0 0 48% !important; /* Ancho cómodo y grande al inicio */
         max-width: 48% !important;
         padding: 0 !important;
         transition: all 0.5s ease !important;
     }
 }
 
-
 /* ==========================================================================
-   ESTADO CUANDO BAJAS EL MOUSE (¡Aquí se encogen!)
+   4. ESTADO CON SCROLL ACTIVO (Achique - 920px)
    ========================================================================== */
-
-/* Al bajar el mouse, JS inyecta la clase y estas reglas obligan a cerrar el contenedor */
 .row-cols-1.row-cols-md-2.tarjetas-encajadas,
 #abilities .row-cols-1.row-cols-md-2.tarjetas-encajadas,
 .habilidades .row-cols-1.row-cols-md-2.tarjetas-encajadas {
-    max-width: 920px !important; /* <--- Se achican suavemente a 920px hacia el centro */
+    max-width: 920px !important; /* <--- Se contraen elegantemente aquí */
 }
 
-
 /* ==========================================================================
-   COMPORTAMIENTO RESPONSIVE REFORZADO
+   5. COMPORTAMIENTO RESPONSIVE (Tablets y Celulares)
    ========================================================================== */
 @media screen and (max-width: 1200px) {
     .nav-inner,
@@ -706,28 +717,4 @@ body {
         max-width: 100% !important;
         margin-bottom: 20px;
     }
-}
-
-
-/* ==========================================================================
-   DESBLOQUEO DE CONTENEDORES PADRE (Para obligar a expandir las tarjetas)
-   ========================================================================== */
-
-/* Forzamos a que la sección de habilidades y cualquier contenedor interno 
-   dejen pasar el ancho de 1200px sin censurarlo */
-#abilities, 
-.habilidades,
-#abilities .container,
-#abilities .container-fluid {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-}
-
-/* Forzamos también a la sección "Sobre mí" o cualquier otra que use la clase .information
-   si es que metiste la grilla ahí dentro */
-.information {
-    max-width: 1200px !important; /* Elevamos el tope de tu .information viejo de tu CSS */
-    width: 85% !important;
-}
+} /* <--- Llave de cierre corregida */
