@@ -624,10 +624,9 @@ body {
 
 
 
-
 /* Estado original de tu fila de tarjetas */
 .row-cols-1.row-cols-md-2 {
-  max-width:1000px; /* O el ancho grande que tenga actualmente */
+  max-width: 100%; /* O el ancho grande que tenga actualmente */
   margin: 0 auto;
   transition: max-width 0.4s ease-in-out; /* Hace que el achique sea suave */
 }
@@ -643,13 +642,11 @@ body {
   transition: all 0.4s ease-in-out;
 }
 
-
-
 nav .d-flex, 
 .navbar .container-fluid,
 header .d-flex,
 .row-cols-1.row-cols-md-2.tarjetas-encajadas { 
-    max-width: 1000px !important; /* <--- Ajustado a 920px */
+    max-width: 920px !important; /* <--- Ajustado a 920px */
     margin-right: auto !important;
     margin-left: auto !important;
     width: 100%;
