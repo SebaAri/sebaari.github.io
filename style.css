@@ -626,6 +626,7 @@ body {
 
 
 
+
 /* ==========================================================================
    CONFIGURACIÓN INICIAL: NAV GIGANTE (1200px) + TARJETAS GRANDES
    ========================================================================== */
@@ -705,4 +706,28 @@ body {
         max-width: 100% !important;
         margin-bottom: 20px;
     }
+}
+
+
+/* ==========================================================================
+   DESBLOQUEO DE CONTENEDORES PADRE (Para obligar a expandir las tarjetas)
+   ========================================================================== */
+
+/* Forzamos a que la sección de habilidades y cualquier contenedor interno 
+   dejen pasar el ancho de 1200px sin censurarlo */
+#abilities, 
+.habilidades,
+#abilities .container,
+#abilities .container-fluid {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Forzamos también a la sección "Sobre mí" o cualquier otra que use la clase .information
+   si es que metiste la grilla ahí dentro */
+.information {
+    max-width: 1200px !important; /* Elevamos el tope de tu .information viejo de tu CSS */
+    width: 85% !important;
 }
