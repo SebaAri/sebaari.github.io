@@ -625,6 +625,8 @@ body {
 
 
 
+
+
 /* ==========================================================================
    EXPANSIÓN MÁXIMA DE TARJETAS (Para que dejen de verse chicas)
    ========================================================================== */
@@ -632,7 +634,7 @@ body {
 /* 1. Sincronizamos el menú para que use la misma estructura limpia */
 .nav-inner {
     width: 85% !important;
-    max-width: 1000px !important; 
+    max-width: 1200px !important; 
     margin: 0 auto !important;
 }
 
