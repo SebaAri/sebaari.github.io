@@ -1076,3 +1076,79 @@ body {
         height: 50px !important;
     }
 }
+
+
+
+
+/* ============================================
+    FIX PARA PANTALLAS GRANDES (>1920px)
+   ============================================ */
+@media screen and (min-width: 1920px) {
+    /* Aumentar padding superior para compensar sticky */
+    .habilidades {
+        padding-top: 150px !important;
+        padding-bottom: 100px !important;
+    }
+    
+    /* Ajustar posición del título sticky */
+    .habilidades h2 {
+        top: 100px !important;
+        margin-bottom: 60px !important;
+        z-index: 50 !important;
+    }
+    
+    /* Container más ancho para pantallas grandes */
+    .habilidades .container {
+        width: 100% !important;
+        max-width: none !important;
+    }
+    
+    /* Fila de tarjetas con ancho máximo mayor */
+    .habilidades .row.row-cols-1.row-cols-md-2 {
+        width: 85% !important; /* Porcentaje menor pero en pantalla más grande */
+        max-width: 1600px !important; /* Máximo más grande */
+        gap: 40px !important; /* Más espacio entre tarjetas */
+    }
+    
+    /* Columnas ajustadas */
+    .habilidades .row.row-cols-1.row-cols-md-2 .col,
+    .habilidades .row.row-cols-1.row-cols-md-2 .col:first-child,
+    .habilidades .row.row-cols-1.row-cols-md-2 .col:last-child {
+        flex: 1 1 calc(50% - 20px) !important;
+        max-width: calc(50% - 20px) !important;
+    }
+    
+    /* Tarjetas más altas */
+    .habilidades .card {
+        min-height: 380px !important;
+    }
+    
+    .habilidades .card-body {
+        padding: 3rem 2.5rem !important;
+    }
+    
+    .habilidades .card-title {
+        font-size: 1.8rem !important;
+    }
+    
+    .habilidades .card-text {
+        font-size: 1.2rem !important;
+        line-height: 1.8 !important;
+    }
+    
+    /* Iconos más grandes */
+    .tech-icons i {
+        font-size: 4.5rem !important;
+    }
+    
+    /* Alinear nav y contenido */
+    .nav-inner,
+    .header-hero-container,
+    .information,
+    .grid-projects,
+    .contacto .contact {
+        width: 85% !important;
+        max-width: 1600px !important;
+    }
+}
+
