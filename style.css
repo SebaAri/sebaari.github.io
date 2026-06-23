@@ -1,3 +1,6 @@
+/* ============================================
+   CONFIGURACIÓN BASE
+   ============================================ */
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap'); 
 
 * { 
@@ -16,9 +19,12 @@ html {
 body { 
     width: 100%; 
     background-color: #f4f4f4; 
+    overflow-x: hidden;
 } 
 
-/* --- NAVEGACIÓN --- */ 
+/* ============================================
+   NAVEGACIÓN
+   ============================================ */
 .container_nav {
     width: 100%;             
     position: fixed;
@@ -33,12 +39,13 @@ body {
 }
 
 .nav-inner {
-    width: 85%;
+    width: 90%;
     max-width: 1200px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin: 0 auto;
 }
 
 .header-title { 
@@ -90,7 +97,9 @@ body {
     width: 100%;
 }
 
-/* --- HEADER --- */ 
+/* ============================================
+   HEADER / HERO
+   ============================================ */
 .header {  
     width: 100%; 
     height: 100vh; 
@@ -106,32 +115,40 @@ body {
 } 
 
 .header-hero-container { 
-    width: 85%;             
+    width: 90%;             
     max-width: 1200px;      
     display: flex; 
     flex-direction: row; 
     justify-content: space-between; 
     align-items: center; 
     gap: 50px;
+    margin: 0 auto;
 } 
 
 .header_name { 
     color: white; 
-    width: 60%; 
+    width: auto;
+    flex: 1;
+    min-width: 0;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
 } 
 
 .header_name h4 { 
     color: rgb(224, 224, 224); 
     font-size: 2.5rem; 
     font-weight: 100;
+    text-align: left;
+    width: 100%;
 }
 
 .header_name h1 { 
-    font-size: clamp(3vw,5vw,8vw); 
+    font-size: clamp(3vw, 5vw, 8vw); 
     margin-bottom: 20px; 
     line-height: 1.2; 
+    text-align: left;
+    width: 100%;
 } 
 
 .header_name h1::first-letter { 
@@ -140,18 +157,10 @@ body {
     border-radius: 10px; 
     display: inline-block !important;
     margin-right: -0.08em !important;
-    vertical-align: middle !important;
-} 
-
-/* --- AJUSTE DE ALINEACIÓN VERTICAL PARA LA PRIMERA LETRA --- */
-
-.header_name h1::first-letter {
     vertical-align: baseline !important;
-
     line-height: 1 !important;
-
     transform: translateY(0.05em) !important;
-}
+} 
 
 .headers_networks { 
     display: flex; 
@@ -161,22 +170,20 @@ body {
 .headers_networks a i { 
     color: white; 
     font-size: 2rem; 
-    /* transition: transform 0.3s; */
     transition-property: color, transform; 
     transition-duration: 0.5s;
     transition-timing-function: cubic-bezier(.06, 1.15, .83, 0.8); 
-    transition-delay: 0s; 
 } 
 
 .headers_networks a:first-of-type i:hover { 
-    color: rgb(34,34,129);
+    color: rgb(34, 34, 129);
     background-color: white;
     border-radius: 2px;
 } 
 
 .headers_networks a:last-of-type i:hover { 
     color: black;
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 50%;
 }
 
@@ -184,7 +191,7 @@ body {
     transform: scale(1.2); 
 } 
 
-/* TARJETA DE LA FOTO (DERECHA) */ 
+/* Tarjeta de foto (derecha) */
 .header .header_description {
     background-color: rgba(0, 63, 71, 0.8);
     width: 320px;
@@ -212,7 +219,9 @@ body {
     font-size: 1.1rem;
 } 
 
-/* --- CONTENIDO PRINCIPAL --- */ 
+/* ============================================
+   CONTENIDO PRINCIPAL
+   ============================================ */
 .content-main { 
     width: 100%; 
 } 
@@ -226,7 +235,7 @@ body {
     justify-content: center; 
 }
 
-/* Secciones IMPARES (Sobre mí, Proyectos...) */
+/* Secciones impares */
 .content-main section:nth-of-type(odd) { 
     background-color: #f4f4f4; 
 } 
@@ -240,7 +249,7 @@ body {
     color: #333; 
 } 
 
-/* Secciones PARES (Habilidades, Contacto...) */
+/* Secciones pares */
 .content-main section:nth-of-type(even) { 
     background-color: rgb(0, 25, 28); 
 } 
@@ -254,9 +263,24 @@ body {
     color: white; 
 } 
 
-/* Sobre Mí Base */ 
+/* Títulos de sección (sticky) */
+.content-main section h2 {  
+    text-align: center;  
+    font-size: 2.5rem;  
+    font-family: 'Righteous', cursive;  
+    margin-bottom: 40px;
+    position: sticky;
+    top: 60px;          
+    z-index: 100;      
+    padding: 15px 0;    
+    background-color: inherit; 
+}
+
+/* ============================================
+   SOBRE MÍ
+   ============================================ */
 .information {  
-    width: 85%; 
+    width: 90%; 
     max-width: 1200px; 
     margin: 0 auto; 
     display: flex; 
@@ -280,66 +304,75 @@ body {
 }
 
 .information .information_image img {
-     width: 100%; 
-     height: auto; 
-     border-radius: 15px; 
+    width: 100%; 
+    height: auto; 
+    border-radius: 15px; 
 }
 
-.content-main section h2 {  
-    text-align: center;  
-    font-size: 2.5rem;  
-    font-family: 'Righteous', cursive;  
-    margin-bottom: 40px;
-    
-    /* --- CORRECCIÓN DE STICKY SEGURO --- */
-    position: sticky;
-    top: 60px;          
-    z-index: 100;      
-    padding: 15px 0;    
-    
-    background-color: inherit; 
+/* ============================================
+   HABILIDADES (TARJETAS) - BASE
+   ============================================ */
+.habilidades {
+    padding-top: 100px !important;
+    padding-bottom: 80px !important;
+    min-height: auto !important;
 }
 
-
-/* --- SECCIÓN HABILIDADES ---*/
-.tech-icons i {
-    font-size: 3.5rem !important;
-    display: inline-block !important;
-    width: auto !important;
-    height: auto !important;
-    line-height: 1 !important;
+.habilidades h2 {
+    position: sticky !important;
+    top: 80px !important;
+    z-index: 50 !important;
+    background-color: rgb(0, 25, 28) !important;
+    margin-bottom: 50px !important;
 }
 
-.tech-icons i::before {
-    display: inline-block !important;
-    font-family: "devicon" !important;
-    font-style: normal !important;
-    font-weight: normal !important;
+/* Container de Bootstrap */
+.habilidades .container {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
-.tech-icons p {
-    color: #FFFFFF;
+/* Fila de tarjetas */
+.habilidades .row.row-cols-1.row-cols-md-2 {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 30px !important;
+    width: 90% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    position: static !important;
+    left: 0 !important;
+    transform: none !important;
+    box-sizing: border-box !important;
 }
 
-
-/* --- EXTENSIÓN PARA EL OVERLAY EN DISPOSITIVOS MÓVILES --- */
-.grid-projects .g-items:hover .overlay,
-.grid-projects .g-items:active .overlay { 
-    height: 100%; 
-    background-color: rgba(0, 63, 71, 0.85); 
+/* Columnas */
+.habilidades .row.row-cols-1.row-cols-md-2 .col,
+.habilidades .row.row-cols-1.row-cols-md-2 .col:first-child,
+.habilidades .row.row-cols-1.row-cols-md-2 .col:last-child {
+    flex: 1 1 calc(50% - 15px) !important;
+    max-width: calc(50% - 15px) !important;
+    padding: 0 !important;
+    position: static !important;
+    box-sizing: border-box !important;
 }
 
-.habilidades .card-title {
-    color: rgb(0, 25, 28) !important;     
-}
-
-/* --- EFECTO FLOTANTE PARA LAS TARJETAS --- */
+/* Tarjetas */
 .habilidades .card {
+    position: relative !important;
+    transform: none !important;
+    margin: 0 !important;
+    width: 100% !important;
+    min-height: 320px !important;
     transition: transform 0.3s ease, box-shadow 0.3s ease !important;
     background-color: rgba(255, 255, 255, 0.05) !important; 
     border: 1px solid rgba(0, 63, 71, 0.5) !important;       
     backdrop-filter: blur(4px) !important;
-
+    box-sizing: border-box !important;
 }
 
 .habilidades .card:hover {
@@ -347,8 +380,7 @@ body {
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15) !important; 
 }
 
-/* --- AGREGADO: VISIBILIDAD DE TEXTOS Y TÍTULOS EN TARJETAS --- */
-
+/* Textos en tarjetas */
 .habilidades .card,
 .habilidades .card-title,
 .habilidades .card-body,
@@ -370,14 +402,115 @@ body {
     color: #b0bec5 !important;
 }
 
+.habilidades .card-title {
+    font-size: 1.6rem !important;
+    margin-bottom: 1rem !important;
+}
 
-/* --- SECCIÓN CONTACTO (ALINEACIÓN REPARADA) --- */
+.habilidades .card-text {
+    font-size: 1.1rem !important;
+    line-height: 1.7 !important;
+}
+
+.habilidades .card-body {
+    padding: 2.5rem 2rem !important;
+}
+
+/* Iconos de tecnologías */
+.tech-icons {
+    margin-bottom: 1.5rem !important;
+    gap: 1rem !important;
+}
+
+.tech-icons i {
+    font-size: 4rem !important;
+    display: inline-block !important;
+    width: auto !important;
+    height: auto !important;
+    line-height: 1 !important;
+}
+
+.tech-icons i::before {
+    display: inline-block !important;
+    font-family: "devicon" !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+}
+
+/* ============================================
+   PROYECTOS
+   ============================================ */
+.grid-projects { 
+    width: 90%; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 30px;
+    justify-content: center;
+}
+
+.grid-projects .g-items { 
+    height: 350px; 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    position: relative; 
+    overflow: hidden; 
+    border-radius: 15px; 
+    background-color: #555; 
+    transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.35s ease, border-color 0.35s ease !important;
+    border: 1px solid transparent; 
+} 
+
+.grid-projects .project-1 {
+    background-image: url("assets/Clon-Google.jpeg");
+}
+
+.grid-projects .project-2 {
+    background-image: url("assets/Sitio-Web.jpeg");
+}
+
+.grid-projects .project-3 {
+    background-image: url("assets/proyecto3.jpg");
+}
+
+.grid-projects .g-items .overlay { 
+    position: absolute; 
+    bottom: 0; 
+    left: 0; 
+    background-color: rgba(0, 63, 71, 0.95); 
+    width: 100%; 
+    height: 40%; 
+    color: white; 
+    font-size: 1.5rem; 
+    display: grid; 
+    place-items: center; 
+    transition: height 0.3s ease;
+} 
+
+.grid-projects .g-items:hover,
+.grid-projects .g-items:active {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 10px 20px rgba(0, 229, 255, 0.15), 0 6px 6px rgba(0, 229, 255, 0.1) !important;
+    border-color: rgba(0, 229, 255, 0.3) !important;
+}
+
+.grid-projects .g-items:hover .overlay,
+.grid-projects .g-items:active .overlay { 
+    height: 100%; 
+    background-color: rgba(0, 63, 71, 0.85); 
+} 
+
+/* ============================================
+   CONTACTO
+   ============================================ */
 .contacto {
     width: 100%;
 }
 
 .contacto .contact {
-    width: 85%;
+    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -399,78 +532,9 @@ body {
     text-decoration: none;
 }
 
-/* Proyectos (Grid) */ 
-.grid-projects { 
-    width: 85%; 
-    max-width: 1200px; 
-    margin: 0 auto; 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-    gap: 30px;
-    justify-content: center;
-}
-
-.grid-projects .g-items { 
-    height: 350px; 
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-    position: relative; 
-    overflow: hidden; 
-    border-radius: 15px; 
-    background-color: #555; 
-} 
-
-/* --- IMÁGENES DE FONDO PARA CADA PROYECTO --- */
-.grid-projects .project-1 {
-    background-image: url("assets/Clon-Google.jpeg");
-     
-}
-
-.grid-projects .project-2 {
-    background-image: url("assets/Sitio-Web.jpeg");
-   
-}
-
-.grid-projects .project-3 {
-    background-image: url("assets/proyecto3.jpg");
-    
-}
-
-.grid-projects .g-items .overlay { 
-    position: absolute; 
-    bottom: 0; 
-    left: 0; 
-    background-color: rgba(0, 63, 71, 0.95); 
-    width: 100%; 
-    height: 40%; 
-    color: white; 
-    font-size: 1.5rem; 
-    display: grid; 
-    place-items: center; 
-    transition: height 0.3s ease;
-    
-} 
-/* --- OPTIMIZACIÓN DE VISIBILIDAD PARA PROYECTOS EN PANTALLAS PEQUEÑAS --- */
-/* 1. Transición base para suavizar la animación en móviles */
-.grid-projects .g-items {
-    transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.35s ease, border-color 0.35s ease !important;
-    border: 1px solid transparent; 
-}
-
-.grid-projects .g-items:hover,
-.grid-projects .g-items:active {
-    transform: translateY(-8px) !important;
-    box-shadow: 0 10px 20px rgba(0, 229, 255, 0.15), 0 6px 6px rgba(0, 229, 255, 0.1) !important;
-    border-color: rgba(0, 229, 255, 0.3) !important;
-}
-
-.grid-projects .g-items:hover .overlay { 
-    height: 100%; 
-    background-color: rgba(0, 63, 71, 0.85); 
-} 
-
-/* --- BOTÓN IR ARRIBA --- */ 
+/* ============================================
+   BOTÓN IR ARRIBA
+   ============================================ */
 .link_up { 
     width: 45px; 
     height: 45px; 
@@ -492,8 +556,12 @@ body {
     background-color: rgba(0, 63, 71, 1);
 }
 
-/* --- DESIGN RESPONSIVO TOTAL --- */ 
-@media (width <= 1344px){
+/* ============================================
+   RESPONSIVE - TODOS LOS BREAKPOINTS
+   ============================================ */
+
+/* Laptops pequeñas (≤1344px) */
+@media (width <= 1344px) {
     .header .header_description {
         display: none;
     }
@@ -502,10 +570,8 @@ body {
     }
 }
 
+/* Escritorio mediano (≤1200px) */
 @media screen and (max-width: 1200px) { 
-    .nav-inner, .header-hero-container { 
-        width: 90%; 
-    } 
     .nav-list {  
         gap: 45px; 
     }
@@ -514,6 +580,7 @@ body {
     } 
 }
 
+/* Tablets (≤992px) */
 @media screen and (max-width: 992px) { 
     .header { 
         height: auto !important; 
@@ -521,151 +588,491 @@ body {
         padding-top: 130px; 
         padding-bottom: 60px; 
     } 
+    
     .container_nav {
         padding: 15px 0;
         background-color: rgba(0, 63, 71, 0.95); 
         backdrop-filter: blur(5px);
         mix-blend-mode: normal;
     }
-    .nav-inner {
-        width: 90%;
-    }
+    
     .header-hero-container { 
         flex-direction: column !important; 
         text-align: center; 
         gap: 40px; 
     } 
+    
     .header_name { 
         width: 100%; 
-        align-items: center; 
+        align-items: center !important;
     } 
+    
+    .header_name h4,
+    .header_name h1 {
+        text-align: center !important;
+    }
+    
     .headers_networks { 
         justify-content: center; 
         margin-top: 15px; 
     } 
+    
     .information { 
         flex-direction: column; 
         text-align: center;
     } 
-    .information .information_image, .information p { 
+    
+    .information .information_image, 
+    .information p { 
         width: 100%; 
     } 
+    
     .content-main section h2 {  
         top: 70px;
     }
-} 
+    
+    /* Habilidades */
+    .habilidades {
+        padding-top: 80px !important;
+        padding-bottom: 70px !important;
+    }
+    
+    .habilidades h2 {
+        top: 90px !important;
+        font-size: 2.2rem !important;
+        margin-bottom: 40px !important;
+    }
+    
+    .habilidades .row.row-cols-1.row-cols-md-2 {
+        width: 92% !important;
+        max-width: 100% !important;
+        gap: 25px !important;
+    }
+    
+    .habilidades .row.row-cols-1.row-cols-md-2 .col,
+    .habilidades .row.row-cols-1.row-cols-md-2 .col:first-child,
+    .habilidades .row.row-cols-1.row-cols-md-2 .col:last-child {
+        flex: 1 1 calc(50% - 12.5px) !important;
+        max-width: calc(50% - 12.5px) !important;
+    }
+    
+    .habilidades .card {
+        min-height: 300px !important;
+    }
+    
+    .habilidades .card-body {
+        padding: 2rem 1.5rem !important;
+    }
+    
+    .habilidades .card-title {
+        font-size: 1.5rem !important;
+    }
+    
+    .habilidades .card-text {
+        font-size: 1rem !important;
+    }
+    
+    .tech-icons i {
+        font-size: 3.5rem !important;
+    }
+    
+    /* Alineación unificada */
+    .nav-inner,
+    .header-hero-container,
+    .information,
+    .habilidades .row.row-cols-1.row-cols-md-2,
+    .grid-projects,
+    .contacto .contact {
+        width: 92% !important;
+        max-width: 100% !important;
+    }
+}
 
+/* Móviles grandes / Tablets pequeñas (≤768px) */
+@media screen and (max-width: 768px) {
+    .content-main section {
+        min-height: auto !important;
+        padding: 60px 0 !important;
+    }
+    
+    .content-main section h2 {
+        font-size: 2rem !important;
+        margin-bottom: 30px !important;
+    }
+    
+    /* Habilidades */
+    .habilidades {
+        padding-top: 80px !important;
+        padding-bottom: 60px !important;
+    }
+    
+    .habilidades h2 {
+        top: 80px !important;
+        font-size: 2rem !important;
+        margin-bottom: 35px !important;
+    }
+    
+    .habilidades .row.row-cols-1.row-cols-md-2 {
+        display: flex !important;
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+        width: 94% !important;
+        max-width: 600px !important;
+        gap: 20px !important;
+    }
+    
+    .habilidades .row.row-cols-1.row-cols-md-2 .col,
+    .habilidades .row.row-cols-1.row-cols-md-2 .col:first-child,
+    .habilidades .row.row-cols-1.row-cols-md-2 .col:last-child {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    .habilidades .card {
+        min-height: 280px !important;
+        width: 100% !important;
+    }
+    
+    .habilidades .card-body {
+        padding: 2rem 1.5rem !important;
+    }
+    
+    .habilidades .card-title {
+        font-size: 1.4rem !important;
+    }
+    
+    .habilidades .card-text {
+        font-size: 1rem !important;
+    }
+    
+    .tech-icons i {
+        font-size: 3rem !important;
+    }
+    
+    /* Alineación unificada */
+    .nav-inner,
+    .header-hero-container,
+    .information,
+    .habilidades .row.row-cols-1.row-cols-md-2,
+    .grid-projects,
+    .contacto .contact {
+        width: 94% !important;
+    }
+    
+    /* Scrollbar estable */
+    html {
+        scrollbar-gutter: stable;
+    }
+}
+
+/* Móviles (≤650px) */
 @media screen and (max-width: 650px) {
     html {
         font-size: 14px; 
     }
+    
     .nav-inner {
         flex-direction: column; 
         gap: 10px;
     }
+    
     .nav-list {
         gap: 25px; 
+        flex-wrap: wrap;
+        justify-content: center;
     }
+    
     .header {
         padding-top: 160px;
     }
-   .header_name h4 {
+    
+    .header_name h4 {
         display: block; 
         font-size: 1.8rem;
     }
+    
     .header_name h1 {
         font-size: 2.3rem; 
     }
+    
     .header .header_description {
         width: 100%;
         min-width: 0; 
         max-width: 290px;
     }
+    
+    /* Sobre mí */
+    .information {
+        gap: 30px !important;
+    }
+    
+    .information p {
+        font-size: 1rem !important;
+        text-align: left !important;
+    }
+    
+    .information .information_image {
+        max-width: 280px !important;
+        margin: 0 auto !important;
+    }
+    
+    /* Grid de proyectos */
+    .grid-projects {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    
+    .grid-projects .g-items {
+        height: 280px !important;
+    }
+    
+    .grid-projects .g-items .overlay {
+        font-size: 1.2rem !important;
+        height: 35% !important;
+    }
+    
+    /* Contacto */
+    .contacto .contact a {
+        font-size: 1rem !important;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    /* Habilidades */
+    .habilidades .row.row-cols-1.row-cols-md-2 {
+        width: 95% !important;
+    }
+    
+    /* Alineación unificada */
+    .nav-inner,
+    .header-hero-container,
+    .information,
+    .habilidades .row.row-cols-1.row-cols-md-2,
+    .grid-projects,
+    .contacto .contact {
+        width: 95% !important;
+    }
 }
 
+/* Móviles pequeños (≤480px) */
 @media screen and (max-width: 480px) {
-    .grid-projects {
-        width: 90%;
-        gap: 20px;
+    .header_name h4 {
+        font-size: 1.6rem !important;
     }
+    
+    .header_name h1 {
+        font-size: 2rem !important;
+    }
+    
+    .header_name h1::first-letter {
+        padding: 0 8px;
+    }
+    
+    .headers_networks a i {
+        font-size: 1.8rem;
+    }
+    
+    .header-hero-container {
+        gap: 25px !important;
+    }
+    
+    .grid-projects .g-items {
+        height: 250px !important;
+    }
+    
     .grid-projects .g-items .overlay {
         font-size: 1.1rem; 
         padding: 10px;
         text-align: center;
     }
+    
+    /* Habilidades */
+    .habilidades {
+        padding-top: 60px !important;
+        padding-bottom: 50px !important;
+    }
+    
+    .habilidades h2 {
+        top: 70px !important;
+        font-size: 1.8rem !important;
+        margin-bottom: 30px !important;
+    }
+    
+    .habilidades .row.row-cols-1.row-cols-md-2 {
+        width: 96% !important;
+    }
+    
+    .habilidades .row.row-cols-1.row-cols-md-2 .col {
+        padding: 0 5px !important;
+    }
+    
+    .habilidades .card {
+        min-height: 260px !important;
+    }
+    
+    .habilidades .card-body {
+        padding: 1.5rem 1rem !important;
+    }
+    
+    .habilidades .card-title {
+        font-size: 1.3rem !important;
+    }
+    
+    .habilidades .card-text {
+        font-size: 0.95rem !important;
+    }
+    
+    .tech-icons i {
+        font-size: 2.8rem !important;
+    }
+    
+    /* Alineación unificada */
+    .nav-inner,
+    .header-hero-container,
+    .information,
+    .habilidades .row.row-cols-1.row-cols-md-2,
+    .grid-projects,
+    .contacto .contact {
+        width: 96% !important;
+    }
 }
 
+/* Móviles muy pequeños (≤400px) */
 @media screen and (max-width: 400px) {
-    .nav-inner {
-        width: 100%;
-        padding: 0 10px;
-    }
     .nav-list {
         flex-direction: row !important;
         flex-wrap: wrap;              
         justify-content: center;
         gap: 15px !important;         
     }
+    
     .nav-list li a {
         font-size: 0.95rem;    
     }
+    
     .header {
         padding-top: 140px;         
     }
+    
+    .header-title {
+        font-size: 1.6rem;
+    }
+    
+    .header_name h4 {
+        font-size: 1.4rem;
+    }
+    
+    .header_name h1 {
+        font-size: 1.9rem;
+    }
+    
+    .content-main section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .grid-projects .g-items {
+        height: 220px !important;
+    }
+    
+    .grid-projects .g-items .overlay {
+        font-size: 1rem;
+    }
+    
+    .tech-icons i {
+        font-size: 2.5rem !important;
+    }
+    
+    /* Habilidades */
+    .habilidades .row.row-cols-1.row-cols-md-2 {
+        width: 97% !important;
+    }
+    
+    /* Alineación unificada */
+    .nav-inner,
+    .header-hero-container,
+    .information,
+    .habilidades .row.row-cols-1.row-cols-md-2,
+    .grid-projects,
+    .contacto .contact {
+        width: 97% !important;
+    }
 }
 
-/* Preferencias del Sistema (Modo Oscuro) */ 
+/* Orientación landscape en móviles */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .header {
+        min-height: auto;
+        padding: 100px 0 40px;
+    }
+    
+    .header-hero-container {
+        flex-direction: row !important;
+    }
+    
+    .header_name {
+        width: 60%;
+    }
+    
+    .content-main section {
+        min-height: auto !important;
+    }
+}
+
+/* Modo oscuro del sistema */
 @media (prefers-color-scheme: dark) { 
     body { background-color: rgb(0, 25, 28); } 
     .content-main section h2 { color: white; background-color: rgb(0, 25, 28); } 
     .information p { color: white; } 
+    
+    .content-main section:nth-of-type(odd) {
+        background-color: rgb(0, 25, 28) !important;
+    }
+    
+    .content-main section:nth-of-type(odd) h2 {
+        color: white !important;
+        background-color: rgb(0, 25, 28) !important;
+    }
+    
+    .content-main section:nth-of-type(odd) .information p {
+        color: #e0e0e0 !important;
+    }
+    
+    .habilidades .card {
+        background-color: rgba(255, 255, 255, 0.08) !important;
+    }
 }
 
-
-
-
-
-/* --- CONTROL DE EXPANSIÓN MEDIO (NI MUY ANCHO NI MUY CHICO) --- */
-
-/* 1. Estado base (Alineado con Ariel y Contacto: 1200px) */
-.row-cols-1.row-cols-md-2 {
-  width: 85% !important;
-  max-width: 1200px !important;
-  margin: 0 auto !important;
-  position: relative;
-  left: 0;
-  transition: all 0.5s ease-in-out; 
+/* Accesibilidad: reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
 
-/* 2. Estado Expandido (Rompe el contenedor de forma controlada) */
-.row-cols-1.row-cols-md-2.tarjetas-encajadas {
-  /* Usamos un porcentaje intermedio de la pantalla */
-  width: 90vw !important;                  
-  
-  /* Definimos un tope elegante para pantallas grandes */
-  max-width: 1200px !important;            
-  
-  /* Este cálculo centra la fila rompiendo el contenedor padre */
- margin-left: calc(-44vw + 50% + 1px) !important;  /* Sumamos espacio a la izquierda (empuja a la derecha) */
-  margin-right: calc(-44vw + 50% - 1px) !important;
-}
-
-/* 3. Espaciado interno para que respiren las tarjetas */
-.row-cols-1.row-cols-md-2 .col {
-  padding: 0 25px; 
-  transition: all 0.5s ease-in-out;
-}
-
-
-
-/* Fuerza a que ambas columnas y sus tarjetas hereden el mismo alto y comportamiento */
-.row-cols-1.row-cols-md-2 .col {
-  display: flex;
-}
-
-.row-cols-1.row-cols-md-2 .card {
-  width: 100%; /* Obliga a la tarjeta a ocupar todo el ancho de su columna */
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+/* Dispositivos táctiles */
+@media (hover: none) and (pointer: coarse) {
+    .grid-projects .g-items .overlay {
+        height: 45% !important;
+    }
+    
+    .nav-list li a {
+        padding: 8px 4px;
+    }
+    
+    .headers_networks a i {
+        padding: 10px;
+    }
+    
+    .link_up {
+        width: 50px !important;
+        height: 50px !important;
+    }
 }
