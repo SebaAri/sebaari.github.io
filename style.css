@@ -622,20 +622,50 @@ body {
 }
 
 
-/* Estado original de tu fila de tarjetas */
+
+
+
+/* --- CONTROL DE EXPANSIÓN MEDIO (NI MUY ANCHO NI MUY CHICO) --- */
+
+/* 1. Estado base (Alineado con Ariel y Contacto: 1200px) */
 .row-cols-1.row-cols-md-2 {
-  max-width: 100%; /* O el ancho grande que tenga actualmente */
-  margin: 0 auto;
-  transition: max-width 0.4s ease-in-out; /* Hace que el achique sea suave */
+  width: 85% !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  position: relative;
+  left: 0;
+  transition: all 0.5s ease-in-out; 
 }
 
-/* Estado cuando se baja el mouse (Activado por JS) */
+/* 2. Estado Expandido (Rompe el contenedor de forma controlada) */
 .row-cols-1.row-cols-md-2.tarjetas-encajadas {
-  /* Pon aquí el ancho exacto donde se alinea con Ariel y Contacto */
-  max-width: 1100px; 
+  /* Usamos un porcentaje intermedio de la pantalla */
+  width: 90vw !important;                  
+  
+  /* Definimos un tope elegante para pantallas grandes */
+  max-width: 1200px !important;            
+  
+  /* Este cálculo centra la fila rompiendo el contenedor padre */
+ margin-left: calc(-44vw + 50% + 1px) !important;  /* Sumamos espacio a la izquierda (empuja a la derecha) */
+  margin-right: calc(-44vw + 50% - 1px) !important;
 }
 
-/* Ajuste para que las tarjetas internas se adapten fluidamente */
-.row-cols-1.row-cols-md-2.tarjetas-encajadas .col {
-  transition: all 0.4s ease-in-out;
+/* 3. Espaciado interno para que respiren las tarjetas */
+.row-cols-1.row-cols-md-2 .col {
+  padding: 0 25px; 
+  transition: all 0.5s ease-in-out;
+}
+
+
+
+/* Fuerza a que ambas columnas y sus tarjetas hereden el mismo alto y comportamiento */
+.row-cols-1.row-cols-md-2 .col {
+  display: flex;
+}
+
+.row-cols-1.row-cols-md-2 .card {
+  width: 100%; /* Obliga a la tarjeta a ocupar todo el ancho de su columna */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
