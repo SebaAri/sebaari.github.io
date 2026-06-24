@@ -568,6 +568,11 @@ body {
     .header {
         background-image: url("assets/foto(2).png");
     }
+      .information p {
+        width: 50%;
+        font-size: 1.2rem;
+        text-align: justify;
+    }
 }
 
 /* Escritorio mediano (≤1200px) */
@@ -578,6 +583,11 @@ body {
     .header_name h1 { 
         font-size: 3.2rem; 
     } 
+        .information p {
+        width: 60%;
+        font-size: 1.15rem;
+        text-align: justify;
+    }
 }
 
 /* Tablets (≤992px) */
@@ -686,6 +696,10 @@ body {
         width: 92% !important;
         max-width: 100% !important;
     }
+      .information p {
+        width: 80%; 
+        margin: 0 auto; 
+    }
 }
 
 /* Móviles grandes / Tablets pequeñas (≤768px) */
@@ -766,7 +780,12 @@ body {
     html {
         scrollbar-gutter: stable;
     }
-}
+
+    .information p {
+        width: 80%;
+        font-size: 1.1rem;
+        text-align: justify;
+    }
 
 /* Móviles (≤650px) */
 @media screen and (max-width: 650px) {
@@ -811,7 +830,10 @@ body {
     
     .information p {
         font-size: 1rem !important;
-        text-align: left !important;
+        width: 90%;
+        font-size: 1.05rem;
+        text-align: justify;
+    }
     }
     
     .information .information_image {
@@ -855,7 +877,7 @@ body {
     .contacto .contact {
         width: 95% !important;
     }
-}
+
 
 /* Móviles pequeños (≤480px) */
 @media screen and (max-width: 480px) {
@@ -938,6 +960,11 @@ body {
     .contacto .contact {
         width: 96% !important;
     }
+      .information p {
+        width: 100%;
+        font-size: 1rem;
+        text-align: justify;
+    }
 }
 
 /* Móviles muy pequeños (≤400px) */
@@ -998,6 +1025,11 @@ body {
     .grid-projects,
     .contacto .contact {
         width: 97% !important;
+    }
+       .information p {
+        width: 100%;
+        font-size: 0.95rem;
+        text-align: left; 
     }
 }
 
@@ -1151,4 +1183,12 @@ body {
         max-width: 1600px !important;
     }
 }
+@media (min-width: 1920px) {
+    .information p {
+        width: 45%;
+        font-size: 1.3rem;
+        text-align: justify;
+    }
+}
 
+}
