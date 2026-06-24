@@ -143,5 +143,38 @@
       </section>
     </main>
     <a href="#Header" class="link_up">&#8593;</a>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav-list a[href^="#"]');
+    const containerNav = document.querySelector('.container_nav');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            // Ocultar TODO el contenedor de navegación (incluyendo el background)
+            containerNav.classList.add('nav-hidden');
+            
+            // Mostrar botón flotante después de la animación
+            setTimeout(() => {
+                showMenuButton();
+            }, 300);
+        });
+    });
+});
+
+function showMenuButton() {
+    // Crear botón flotante si no existe
+    if (!document.querySelector('.menu-toggle-btn')) {
+        const btn = document.createElement('button');
+        btn.className = 'menu-toggle-btn';
+        btn.innerHTML = '☰';
+        btn.onclick = function() {
+            const containerNav = document.querySelector('.container_nav');
+            containerNav.classList.remove('nav-hidden');
+            this.remove();
+        };
+        document.body.appendChild(btn);
+    }
+}
+</script>
   </body>
 </html>

@@ -568,7 +568,7 @@ body {
     .header {
         background-image: url("assets/foto(2).png");
     }
-      .information p {
+    .information p {
         width: 50%;
         font-size: 1.2rem;
         text-align: justify;
@@ -583,7 +583,7 @@ body {
     .header_name h1 { 
         font-size: 3.2rem; 
     } 
-        .information p {
+    .information p {
         width: 60%;
         font-size: 1.15rem;
         text-align: justify;
@@ -696,7 +696,8 @@ body {
         width: 92% !important;
         max-width: 100% !important;
     }
-      .information p {
+    
+    .information p {
         width: 80%; 
         margin: 0 auto; 
     }
@@ -787,6 +788,29 @@ body {
         text-align: justify;
     }
 
+/* Efecto hover/active para proyectos en móviles (768px) */
+.grid-projects .g-items:hover,
+.grid-projects .g-items:active {
+    transform: translateY(-5px) !important; /* Menos elevación en móviles */
+    box-shadow: 0 8px 16px rgba(0, 229, 255, 0.2), 0 4px 4px rgba(0, 229, 255, 0.15) !important;
+    border-color: rgba(0, 229, 255, 0.4) !important;
+}
+
+.grid-projects .g-items:hover .overlay,
+.grid-projects .g-items:active .overlay { 
+    height: 100% !important; /* Mantiene el efecto de cubrir toda la tarjeta */
+    background-color: rgba(0, 63, 71, 0.9) !important; /* Más opaco para mejor legibilidad */
+}
+
+/* Overlay siempre visible en móviles (ya que no hay hover real) */
+.grid-projects .g-items .overlay {
+    height: 45% !important; /* Un poco más alto que en desktop para mejor visibilidad */
+    background-color: rgba(0, 63, 71, 0.9) !important;
+}
+
+
+} 
+
 /* Móviles (≤650px) */
 @media screen and (max-width: 650px) {
     html {
@@ -831,9 +855,7 @@ body {
     .information p {
         font-size: 1rem !important;
         width: 90%;
-        font-size: 1.05rem;
         text-align: justify;
-    }
     }
     
     .information .information_image {
@@ -877,7 +899,7 @@ body {
     .contacto .contact {
         width: 95% !important;
     }
-
+} /* ✅ LLAVE DE CIERRE AGREGADA */
 
 /* Móviles pequeños (≤480px) */
 @media screen and (max-width: 480px) {
@@ -960,7 +982,8 @@ body {
     .contacto .contact {
         width: 96% !important;
     }
-      .information p {
+    
+    .information p {
         width: 100%;
         font-size: 1rem;
         text-align: justify;
@@ -1026,12 +1049,40 @@ body {
     .contacto .contact {
         width: 97% !important;
     }
-       .information p {
+    
+    .information p {
         width: 100%;
         font-size: 0.95rem;
         text-align: left; 
     }
 }
+
+/* ============================================
+   RELOJES INTELIGENTES: Quitar sticky de los títulos
+   ============================================ */
+@media screen and (max-width: 360px) {
+    
+    .content-main section h2,
+    .habilidades h2,
+    .sobre-mi h2,
+    .proyectos h2,
+    .contacto h2 {
+        position: static !important;
+        top: auto !important;
+        z-index: auto !important;
+        margin-bottom: 15px !important; /* Reducimos el margen para ahorrar espacio en la pantalla del reloj */
+    }
+
+
+    .contacto .contact a {
+    text-align: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: 400px !important;
+}
+
+}
+
 
 /* Orientación landscape en móviles */
 @media screen and (max-height: 500px) and (orientation: landscape) {
@@ -1109,9 +1160,6 @@ body {
     }
 }
 
-
-
-
 /* ============================================
     FIX PARA PANTALLAS GRANDES (>1920px)
    ============================================ */
@@ -1137,9 +1185,9 @@ body {
     
     /* Fila de tarjetas con ancho máximo mayor */
     .habilidades .row.row-cols-1.row-cols-md-2 {
-        width: 85% !important; /* Porcentaje menor pero en pantalla más grande */
-        max-width: 1600px !important; /* Máximo más grande */
-        gap: 40px !important; /* Más espacio entre tarjetas */
+        width: 85% !important;
+        max-width: 1600px !important;
+        gap: 40px !important;
     }
     
     /* Columnas ajustadas */
@@ -1183,6 +1231,7 @@ body {
         max-width: 1600px !important;
     }
 }
+
 @media (min-width: 1920px) {
     .information p {
         width: 45%;
@@ -1190,5 +1239,60 @@ body {
         text-align: justify;
     }
 }
+
+
+/* ============================================
+   MENÚ OCULTABLE PARA RELOJES INTELIGENTES
+   ============================================ */
+
+/* Ocultar TODO el contenedor de navegación */
+.container_nav.nav-hidden {
+    transform: translateY(-100%) !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: transform 0.3s ease, opacity 0.3s ease !important;
+}
+
+/* Estado normal del contenedor */
+.container_nav {
+    transition: transform 0.3s ease, opacity 0.3s ease !important;
+}
+
+/* Botón flotante para volver a mostrar el menú */
+.menu-toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 63, 71, 0.9);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+.menu-toggle-btn:hover {
+    background-color: rgba(0, 63, 71, 1);
+}
+
+/* Aplicar solo en pantallas muy pequeñas (relojes) */
+@media screen and (max-width: 360px) {
+    .menu-toggle-btn {
+        top: 10px;
+        right: 10px;
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+
 
 }
