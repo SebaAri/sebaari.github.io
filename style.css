@@ -601,7 +601,7 @@ body {
 /* 
    CONTACTO
 */
-.contact {
+/*contact {
   width: var(--container-padding);
   max-width: var(--container-width);
   margin: 0 auto;
@@ -651,7 +651,53 @@ body {
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
   font-size: 1.2rem;
+}*/
+
+
+.contact_form{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: space-around;
 }
+
+.contact_form [class^="form"]{
+    width: 30%; /* Mismo ancho que los inputs */
+    max-width: 400px; /* Ancho máximo */
+    margin: 0 auto; 
+    height: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact_form [class^="form"] label{
+    color: white;
+    margin-bottom: 5px;
+}
+
+.contact_form [class^="form"] input{
+    padding: 15px;
+    width: 100%; 
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.contact_form [class^="form"]:last-of-type{
+    height: auto; 
+    flex: 1; 
+}
+
+.contact_form [class^="form"]:last-of-type textarea{
+    resize: none;
+    width: 100%; 
+    height: 150px; 
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
 
 /* 
    BOTÓN IR ARRIBA
