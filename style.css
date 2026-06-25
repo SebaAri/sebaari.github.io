@@ -601,7 +601,7 @@ body {
 /* 
    CONTACTO
 */
-/*contact {
+/*.contact {
   width: var(--container-padding);
   max-width: var(--container-width);
   margin: 0 auto;
@@ -611,9 +611,9 @@ body {
   align-items: center;
   justify-content: center;
   gap: 20px;
-}
+}*/
 
-.contact a {
+/*.contact a {
   display: inline-flex;
   flex-direction: row;
   justify-content: center;
@@ -629,30 +629,30 @@ body {
   border-radius: var(--border-radius-md);
   transition: all var(--transition-fast);
   font-weight: 500;
-}
+}*/
 
-.contact a:hover {
+/*.contact a:hover {
   background-color: transparent;
   border-color: rgba(0, 63, 71, 0.9);
   color: var(--color-primary-dark);
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0, 63, 71, 0.3);
-}
+}*/
 
-.contact .boton-email::before {
+/*.contact .boton-email::before {
   content: "\f0e0";
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  font-size: 1.2rem;
-}
-
-.contact .btn-telefono::before {
-  content: "\f095";
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
   font-size: 1.2rem;
 }*/
 
+/*.contact .btn-telefono::before {
+  content: "\f095";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+*/
 
 .contact_form{
     width: 100%;
