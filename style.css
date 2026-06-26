@@ -256,6 +256,19 @@ body {
   padding: var(--gap-sm) 0;
   background-color: inherit;
 }
+.content-main section#about,
+.content-main section#projects {
+  background-color: #fff;
+}
+.content-main section#about h2,
+.content-main section#projects h2 {
+  background-color: #fff;
+  color: var(--color-primary-dark);
+}
+.content-main section#about .information p,
+.content-main section#projects .information p {
+  color: var(--color-text-dark);
+}
 .information {
   width: var(--container-padding);
   max-width: var(--container-width);
@@ -501,12 +514,8 @@ body {
   transform: none;
   box-shadow: none;
 }
-.contact {
-  width: 100%;
-  padding: var(--section-padding) 0;
-}
 .contact__form {
-  width: 100%;
+  width: 50%;
   max-width: 600px;
   margin: 0 auto;
   display: flex;
@@ -520,27 +529,45 @@ body {
   flex-direction: column;
 }
 .form-field__label {
-  color: white;
-  margin-bottom: 5px;
+  color: #fff;
+  margin-bottom: 8px;
   font-weight: 500;
+  font-size: 0.95rem;
 }
 .form-field__input,
 .form-field__textarea {
-  padding: 15px;
   width: 100%;
+  padding: 15px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  box-sizing: border-box;
+  background-color: #fff;
+  color: #333;
   font-family: inherit;
   font-size: 1rem;
+  box-sizing: border-box;
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 .form-field__textarea {
-  min-height: 300px;
-  height: 350px;
+  min-height: 200px;
+  height: 220px;
   resize: vertical;
+  line-height: 1.5;
+}
+.form-field__input:focus,
+.form-field__textarea:focus {
+  outline: 0;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(0, 63, 71, 0.2);
+}
+.form-field__input::placeholder,
+.form-field__textarea::placeholder {
+  color: #999;
+  opacity: 1;
 }
 .contact__submit {
-  margin-top: 20px;
+  margin-top: 10px;
   padding: 15px 35px;
   background-color: var(--color-primary);
   color: var(--color-text-light);
@@ -564,17 +591,6 @@ body {
 .contact__submit:disabled {
   opacity: 0.7;
   cursor: not-allowed;
-}
-.form-field__input:focus,
-.form-field__textarea:focus {
-  outline: 0;
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(0, 63, 71, 0.2);
-}
-.form-field__input::placeholder,
-.form-field__textarea::placeholder {
-  color: #999;
-  opacity: 1;
 }
 .form-message {
   margin-top: 20px;
@@ -812,12 +828,19 @@ body {
     font-size: 0.85rem;
     margin-top: 12px;
   }
-  .contact__form {
+  .contact_form [class^="form"] {
+    width: 90%;
+    max-width: 100%;
+  }
+  .form-message {
     width: 90%;
   }
-  .form-field__textarea {
-    min-height: 250px;
-    height: 300px;
+  .contact__form {
+    width: 90%;
+    max-width: 100%;
+  }
+  .form-message {
+    width: 100%;
   }
 }
 @media screen and (max-width: 650px) {
@@ -870,6 +893,14 @@ body {
   .g-items .overlay {
     font-size: 1.2rem;
     height: 35%;
+  }
+  .contact {
+    flex-direction: column;
+  }
+  .contact a {
+    font-size: 1rem;
+    width: 100%;
+    max-width: 300px;
   }
   .habilidades-grid {
     width: 95%;
@@ -975,6 +1006,12 @@ body {
     z-index: auto;
     margin-bottom: var(--gap-sm);
   }
+  .contact a {
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+  }
   .menu-toggle-btn {
     top: 10px;
     right: 10px;
@@ -1021,6 +1058,29 @@ body {
   }
   .skill-card {
     background-color: rgba(255, 255, 255, 0.08);
+  }
+  .content-main section#about,
+  .content-main section#projects {
+    background-color: #1a1a1a;
+  }
+  .content-main section#about h2,
+  .content-main section#projects h2 {
+    background-color: #1a1a1a;
+    color: var(--color-text-light);
+  }
+  .content-main section#about .information p,
+  .content-main section#projects .information p {
+    color: #e0e0e0;
+  }
+  .form-field__input,
+  .form-field__textarea {
+    background-color: #2d2d2d;
+    color: #fff;
+    border-color: #444;
+  }
+  .form-field__input::placeholder,
+  .form-field__textarea::placeholder {
+    color: #888;
   }
 }
 @media (prefers-reduced-motion: reduce) {
