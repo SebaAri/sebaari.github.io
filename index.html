@@ -14,7 +14,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.14.0/devicon.min.css"
     />
-      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- ❌ ELIMINADO: Ya no necesitas EmailJS -->
   </head>
   <body>
     <header class="header" id="Header">
@@ -92,14 +92,10 @@
       <section id="abilities" class="habilidades">
         <h2>Habilidades</h2>
         <div class="habilidades-grid">
-          <!-- TARJETA 1: DATA SCIENCE & BASES DE DATOS -->
           <article class="skill-card">
             <div class="tech-icons">
               <i class="devicon-python-plain colored" aria-hidden="true"></i>
-              <i
-                class="devicon-postgresql-plain colored"
-                aria-hidden="true"
-              ></i>
+              <i class="devicon-postgresql-plain colored" aria-hidden="true"></i>
             </div>
             <h5 class="skill-title">Data Science & Bases de Datos</h5>
             <p class="skill-text">
@@ -109,7 +105,6 @@
             </p>
           </article>
 
-          <!-- TARJETA 2: DESARROLLO FRONTEND -->
           <article class="skill-card">
             <div class="tech-icons">
               <i class="devicon-html5-plain colored" aria-hidden="true"></i>
@@ -131,96 +126,54 @@
       <section id="projects" class="proyectos">
         <h2>Proyectos</h2>
         <div class="grid-projects">
-          <!-- PROYECTO 1 -->
           <div class="project-1 g-items">
             <div class="card">
               <div class="front">
-                <img
-                  src="assets/Clon-Google.jpeg"
-                  alt="Captura del proyecto Clon de Google"
-                />
-                <div class="overlay">
-                  <span>Clon de Google</span>
-                </div>
+                <img src="assets/Clon-Google.jpeg" alt="Captura del proyecto Clon de Google" />
+                <div class="overlay"><span>Clon de Google</span></div>
               </div>
               <div class="back">
                 <div class="description">
                   <h2>Clon de Google</h2>
-                  <p>
-                    Réplica funcional de la interfaz de búsqueda de Google,
-                    desarrollada con HTML5 y CSS3. Incluye barra de búsqueda
-                    interactiva, diseño responsive y animaciones sutiles para
-                    mejorar la experiencia del usuario.
-                  </p>
-                  <a
-                    href="https://github.com/SebaAri/code-lab/tree/main/Desarrollo-Web/HTML5/Front-End-Buscador"
-                    class="btn-project"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i class="fa-brands fa-github"></i>
-                    Ver repositorio
+                  <p>Réplica funcional de la interfaz de búsqueda de Google, desarrollada con HTML5 y CSS3. Incluye barra de búsqueda interactiva, diseño responsive y animaciones sutiles para mejorar la experiencia del usuario.</p>
+                  <a href="https://github.com/SebaAri/code-lab/tree/main/Desarrollo-Web/HTML5/Front-End-Buscador" class="btn-project" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-github"></i> Ver repositorio
                   </a>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- PROYECTO 2 -->
           <div class="project-2 g-items">
             <div class="card">
               <div class="front">
-                <img
-                  src="assets/Sitio-Web.jpeg"
-                  alt="Captura del proyecto Sitio Web Responsivo"
-                />
-                <div class="overlay">
-                  <span>Sitio Web Responsivo</span>
-                </div>
+                <img src="assets/Sitio-Web.jpeg" alt="Captura del proyecto Sitio Web Responsivo" />
+                <div class="overlay"><span>Sitio Web Responsivo</span></div>
               </div>
               <div class="back">
                 <div class="description">
                   <h2>Sitio Web Responsivo</h2>
-                  <p>
-                    Sitio web completamente responsive construido con Bootstrap
-                    y Sass. Implementa una arquitectura de componentes
-                    reutilizables, grid system adaptativo y optimización de
-                    estilos mediante variables y mixins.
-                  </p>
-                  <a
-                    href="https://github.com/SebaAri/code-lab/tree/main/Desarrollo-Web/HTML5/SitioWebResponsivo-Bootstrap-Sass"
-                    class="btn-project"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i class="fa-brands fa-github"></i>
-                    Ver repositorio
+                  <p>Sitio web completamente responsive construido con Bootstrap y Sass. Implementa una arquitectura de componentes reutilizables, grid system adaptativo y optimización de estilos mediante variables y mixins.</p>
+                  <a href="https://github.com/SebaAri/code-lab/tree/main/Desarrollo-Web/HTML5/SitioWebResponsivo-Bootstrap-Sass" class="btn-project" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-github"></i> Ver repositorio
                   </a>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- PROYECTO 3 -->
           <div class="project-3 g-items">
             <div class="card">
               <div class="front">
                 <img src="assets/proyecto3.jpg" alt="Proyecto en desarrollo" />
-                <div class="overlay">
-                  <span>En desarrollo</span>
-                </div>
+                <div class="overlay"><span>En desarrollo</span></div>
               </div>
               <div class="back">
                 <div class="description">
                   <h2>Próximamente</h2>
-                  <p>
-                    Este proyecto se encuentra actualmente en fase de
-                    desarrollo. Pronto estará disponible con una descripción
-                    completa y enlace al repositorio.
-                  </p>
+                  <p>Este proyecto se encuentra actualmente en fase de desarrollo. Pronto estará disponible con una descripción completa y enlace al repositorio.</p>
                   <button class="btn-project btn-disabled" disabled>
-                    <i class="fa-solid fa-clock"></i>
-                    En desarrollo
+                    <i class="fa-solid fa-clock"></i> En desarrollo
                   </button>
                 </div>
               </div>
@@ -228,32 +181,46 @@
           </div>
         </div>
       </section>
-<section id="contact" class="contact">
-  <h2>Contacto</h2>
-  <form class="contact__form" id="contactForm" autocomplete="on">
-    <div class="form-field">
-      <label class="form-field__label" for="name">Nombre</label>
-      <input class="form-field__input" type="text" id="name" name="name" placeholder="Tu nombre completo" required />
-    </div>
-    
-    <div class="form-field">
-      <label class="form-field__label" for="email">Email</label>
-      <input class="form-field__input" type="email" id="email" name="email" placeholder="tu@email.com" required />
-    </div>
-    
-    <div class="form-field">
-      <label class="form-field__label" for="message">Mensaje</label>
-      <textarea class="form-field__textarea" id="message" name="message" placeholder="Escribe tu mensaje aquí..." required></textarea>
-    </div>
-    
-    <button type="submit" class="contact__submit" id="submitBtn">
-      <i class="fa-solid fa-paper-plane"></i>
-      <span>Enviar mensaje</span>
-    </button>
-    
-    <div class="form-message" id="formMessage" role="alert" aria-live="polite"></div>
-  </form>
-</section>
+
+      <!-- ✅ CONTACTO CON FORMSUBMIT -->
+      <section id="contact" class="contact">
+        <h2>Contacto</h2>
+        <form 
+          class="contact__form" 
+          id="contactForm" 
+          action="https://formsubmit.co/arielrobsebasti@gmail.com" 
+          method="POST"
+        >
+          <!-- Configuración oculta para FormSubmit -->
+          <input type="hidden" name="_subject" value="📧 Nuevo mensaje del Portafolio">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://sebaari.github.io/#contact">
+          <input type="text" name="_honey" style="display:none">
+          
+          <div class="form-field">
+            <label class="form-field__label" for="name">Nombre</label>
+            <input class="form-field__input" type="text" id="name" name="name" placeholder="Tu nombre completo" required />
+          </div>
+          
+          <div class="form-field">
+            <label class="form-field__label" for="email">Email</label>
+            <input class="form-field__input" type="email" id="email" name="email" placeholder="tu@email.com" required />
+          </div>
+          
+          <div class="form-field">
+            <label class="form-field__label" for="message">Mensaje</label>
+            <textarea class="form-field__textarea" id="message" name="message" placeholder="Escribe tu mensaje aquí..." required></textarea>
+          </div>
+          
+          <button type="submit" class="contact__submit" id="submitBtn">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span>Enviar mensaje</span>
+          </button>
+          
+          <div class="form-message" id="formMessage" role="alert" aria-live="polite"></div>
+        </form>
+      </section>
     </main>
 
     <a href="#Header" class="link_up" aria-label="Volver arriba">&#8593;</a>
