@@ -436,11 +436,10 @@ body {
 .g-items .back .description h2 {
   position: static;
   font-size: 1.5rem;
-  margin-top: 20px;
   margin-bottom: var(--gap-sm);
   color: var(--color-text-light);
   background: transparent;
-  padding: 0;
+  padding: 0; 
   font-family: var(--font-display);
 }
 .g-items .back .description p {
