@@ -362,6 +362,13 @@ body {
   justify-content: center;
 }*/
 
+.btn-repositorio {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 10px;
+}
+
 .grid-projects {
   width: var(--container-padding);
   max-width: var(--container-width);
