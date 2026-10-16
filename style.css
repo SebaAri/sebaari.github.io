@@ -363,8 +363,6 @@ body {
 }*/
 
 
-}
-
 .grid-projects {
   width: var(--container-padding);
   max-width: var(--container-width);
@@ -494,7 +492,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin-top: 20px;
+  margin-top: 15px;
   padding: 10px 24px;
   background-color: rgba(255, 255, 255, 0.15);
   color: var(--color-text-light);
@@ -514,14 +512,6 @@ body {
 }
 .btn-project i {
   font-size: 1.1rem;
-}
-
-.btn-project {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    padding: 6px 10px;
-   
 }
 
 .btn-disabled {
