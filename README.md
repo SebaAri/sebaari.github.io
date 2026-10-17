@@ -52,7 +52,7 @@ Panel visual para seguimiento de operaciones y estados.
 
 GitHub: https:www.github.com/SebaAri
 LinkedIn: https://www.linkedin.com/in/arielrsebas
-Email: arielrobsebasti@gmail.com
+
 
 ⚙️ Instalación
 
