@@ -487,6 +487,18 @@ body {
     0 6px 6px rgba(0, 229, 255, 0.1);
   border-color: rgba(0, 229, 255, 0.3);
 }
+
+.g-items:hover .back,
+.g-items:active .back {
+  z-index: 10; /* Asegura que la cara trasera salte al frente en Firefox*/
+}
+
+.g-items:hover .btn-project,
+.g-items:active .btn-project {
+  position: relative;
+  z-index: 20; /* Fuerza a que el botón sea interactivo y visible sobre cualquier capa */
+}
+
 .btn-project {
   display: inline-flex;
   align-items: center;
