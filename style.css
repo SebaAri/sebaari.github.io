@@ -504,6 +504,9 @@ body {
   font-weight: 500;
   cursor: pointer;
   transition: all var(--transition-fast);
+
+  position: relative;
+  z-index: 2
 }
 
 
